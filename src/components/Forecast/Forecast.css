@@ -1,0 +1,16 @@
+.forecast__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forecast__title {
+    border-bottom: 2px solid #fff;
+    font-size: 2rem;
+}
+
+.forecast__cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}

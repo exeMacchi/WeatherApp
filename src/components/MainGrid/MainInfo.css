@@ -1,0 +1,21 @@
+.main-info__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-info__icon {
+    font-size: 10rem;
+}
+
+.main-info__temperature {
+    font-size: 6rem;
+    font-weight: 300;
+}
+
+.main-info__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

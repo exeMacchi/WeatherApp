@@ -1,0 +1,28 @@
+.forecast-card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.forecast-card__time {
+    font-size: 1.5rem;
+}
+
+.forecast-card__icon {
+    font-size: 5rem;
+}
+
+.forecast-card__week {
+    display: flex;
+    gap: 10px;
+}
+
+.forecast-card__max {
+    font-size: 1.5rem;
+}
+
+.forecast-card__min {
+    font-size: 1.5rem;
+    color: gray;
+}
