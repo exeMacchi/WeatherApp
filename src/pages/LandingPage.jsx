@@ -1,12 +1,18 @@
-// TODO: importar todos los componentes necesarios de la landingpage
+// Funciones
+import { useState } from "react";
+import getWeatherData from "../services/weatherAPI";
+import { organizeMainForecast, organizeDailyForecast, organizeWeekForecast } from "../utils/weatherData";
+
+// Componentes
 import Search from "../components/Search/Search";
 import MainGrid from "../components/MainGrid/MainGrid";
 import Forecast from "../components/Forecast/Forecast";
 import "./LandingPage.css";
 
+
 // Toda la siguiente información se conseguiría en la API.
 // MainGrid
-const weather = {
+const weatherTest = {
     date: "Jueves, 2 de mayo de 2024",
     localHour: "01:50",
     locate: "CABA, Buenos Aires",
@@ -17,7 +23,7 @@ const weather = {
     wind: "4" + " km/h"
 }
 // Forecast
-const dailyForecast = [
+const dailyForecastTest = [
     {
         hour: "02:00",
         icon: "rainy",
@@ -45,7 +51,7 @@ const dailyForecast = [
     }
 ]
 
-const weekForecast = [
+const weekForecastTest = [
     {
         day: "Viernes",
         icon: "cloud",
@@ -80,19 +86,38 @@ const weekForecast = [
 
 // El color del background se cambia según la información de la API. El ícono depende de
 // la información que se recibe.
-if (weather.icon === "rainy") {
+if (weatherTest.icon === "rainy") {
     document.body.classList.add("background__rainy");
 }
-else if (weather.icon === "sunny") {
+else if (weatherTest.icon === "sunny") {
     document.body.classList.add("background__sunny");
 }
 
 const LandingPage = () => {
+    const [mainForecast, setMainForecast] = useState(weatherTest);
+    const [dailyForecast, setDailyForecast] = useState(dailyForecastTest);
+    const [weekForecast, setWeekForecast] = useState(weekForecastTest);
+
+    // Cuando se selecciona una ciudad en el buscador.
+    const handleOnSearchChange = async (searchData) => {
+        try {
+            const weatherData = await getWeatherData(searchData.value);
+            // Se actualiza el MainGrid
+            setMainForecast(organizeMainForecast(weatherData));
+            // Se actualiza el Forecast daily
+            setDailyForecast(organizeDailyForecast(weatherData.forecast.forecastday, weatherData.location.localtime.slice(-5)));
+            // Se actualiza el Forecast week
+            setWeekForecast(organizeWeekForecast(weatherData.forecast.forecastday));
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }
 
     return (
         <main className="container">
-            <Search/>
-            <MainGrid weather={weather}/>
+            <Search onSearchChange={handleOnSearchChange}/>
+            <MainGrid weather={mainForecast}/>
             <Forecast daily dailyForecast={dailyForecast}/>
             <Forecast weekForecast={weekForecast}/>
         </main>
