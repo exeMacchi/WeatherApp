@@ -7,17 +7,6 @@
 .search__bar {
     flex: 1;
     border: none;
-    border-radius: 10px;
-    outline: none;
-    padding-left: 10px;
-    font-size: 1.8rem;
-    background-color: #fff;
-    color: #222;
-}
-
-.search__bar--test {
-    flex: 1;
-    border: none;
     padding-left: 10px;
     font-size: 1.8rem;
     color: #222;

@@ -34,24 +34,14 @@ const Search = ({ onSearchChange }) => {
 
     return (
         <section className="search__container">
-            {/* <input id="search"
-                   className="search__bar"
-                   type="text"
-                   name="search"
-                   placeholder="Buscar..."
-                   onInput={handleInputChange}/> */}
-            
             <AsyncPaginate placeholder="Buscar"
-                           debounceTimeout={1000} // Retraso en la llamada a la API, esto permite al usuario tipear la ciudad y que no llame a la API por cada tipeo.
+                           // Retraso en la llamada a la API, esto permite al usuario 
+                           // tipear la ciudad y que no llame a la API por cada tipeo.
+                           debounceTimeout={1000} 
                            value={searchValue}
-                           className="search__bar--test"
+                           className="search__bar"
                            onChange={handleInputChange}
-                           loadOptions={handleLoadOptions}
-                           />
-            
-            {/* <button type="button" className="search__button" onClick={handleSearchButton}>
-                <span className="material-symbols-outlined">search</span>
-            </button> */}
+                           loadOptions={handleLoadOptions}/>
         </section>
     );
 }

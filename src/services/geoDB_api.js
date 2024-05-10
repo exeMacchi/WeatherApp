@@ -9,6 +9,7 @@ const options = {
 
 const getCity = async (searchValue) => {
     try {
+        // TODO: buscar el código de país para una búsqueda más eficiente si es que el usuario lo coloca.
         const res = await fetch(`${BASE_URL}?namePrefix=${searchValue}&languageCode=es`, options);
         const data = await res.json();
         return data;
