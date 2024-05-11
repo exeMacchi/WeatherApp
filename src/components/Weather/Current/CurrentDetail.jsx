@@ -1,12 +1,10 @@
-import "./ExtraInfo.css";
-
-const MainExtraInfo = ({icon, info}) => {
+const CurrentDetail = ({icon, info}) => {
     return (
         <div className="extra-info__container">
             <span className="material-symbols-outlined extra-info__icon">{icon}</span>
-            <p className="extra-info__info">{info}</p>
+            <span className="extra-info__info">{info}</span>
         </div>
     );
 }
 
-export default MainExtraInfo;
+export default CurrentDetail;

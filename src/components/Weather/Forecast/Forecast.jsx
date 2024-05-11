@@ -3,8 +3,8 @@ import "./Forecast.css";
 
 const Forecast = ({ daily, dailyForecast, weekForecast }) => {
     return (
-        <section className="forecast__container">
-            <h3 className="forecast__title">{daily ? "Temperatura del día" : "Temperatura de la semana"}</h3>
+        <section className="card forecast__container">
+            <h3 className="card__title">{daily ? "Temperatura del día" : "Temperatura de la semana"}</h3>
             <ul className="forecast__cards">
                 {
                     daily 

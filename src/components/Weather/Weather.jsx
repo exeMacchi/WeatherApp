@@ -1,8 +1,8 @@
 import { organizeMainForecast, organizeDailyForecast, organizeWeekForecast } from "../../utils/weatherData";
 import Forecast from "./Forecast/Forecast";
-import MainGrid from "./MainGrid/MainGrid";
+import Current from "./Current/Current";
 import Spinner from "../Spinner";
-
+import './weather.css'
 
 const Weather = ({isLoading, show, weatherData}) => {
 
@@ -16,8 +16,8 @@ const Weather = ({isLoading, show, weatherData}) => {
         // Se actualiza el Forecast week
         const weekForecast = organizeWeekForecast(weatherData.forecast.forecastday);
         return (
-            <section>
-                <MainGrid weather={mainForecast}/>
+            <section className="weather-container">
+                <Current weather={mainForecast}/>
                 <Forecast daily dailyForecast={dailyForecast}/>
                 <Forecast weekForecast={weekForecast}/>
             </section>

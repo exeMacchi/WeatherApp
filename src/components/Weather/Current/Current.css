@@ -1,0 +1,57 @@
+@import url('../../../styles/card.css');
+
+.current-container{
+    background: var(--bg-gr);
+    color: var(--text-white-hard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-48);
+    text-shadow: 0px 0px 12px rgba(0,0,0,0.18);
+}
+
+/* Current location */
+
+.current__local-date {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: var(--bold);
+    letter-spacing: 1px;
+}
+
+.current__local-date span{
+    font-weight: var(--regular);
+}
+
+.current__location {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: var(--regular);
+}
+
+/* Current Temp */
+
+.current-temp{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-32);
+}
+
+.current__temp-icon{
+    font-size: 12rem;
+}
+
+.current__temp{
+    font-size: 10rem;
+    font-weight: var(--semibold);
+}
+
+/* Current detail */
+.current-detail{
+    padding: var(--spacing-12);
+    margin: var(--spacing-16) 0;
+    color: var(--text-black-solid);
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
