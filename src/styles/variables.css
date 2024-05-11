@@ -1,0 +1,49 @@
+:root{
+    /* Colors */
+    --bg: #f7f7f7;
+    --bg-card: #FFF;
+    --bg-gr: linear-gradient(137deg, rgba(147,189,255,1) 37%, rgba(193,232,250,1) 100%);
+
+    --text-black-hard: #2c2f35;
+    --text-black-solid: #474e59;
+    --text-black-medium: #8f939b;
+    --text-black-soft: #bcc0c7;
+
+    --text-white-hard: #FFF;
+    --text-white-solid: #474e59;
+    --text-white-medium: #8f939b;
+    --text-white-soft: #bcc0c7;
+
+    /* Spacing */
+    --spacing-160: 160px;
+    --spacing-120: 120px;
+    --spacing-80: 80px;
+    --spacing-64: 64px;
+    --spacing-48: 48px;
+    --spacing-40: 40px;
+    --spacing-32: 32px;
+    --spacing-24: 24px;
+    --spacing-16: 16px;
+    --spacing-12: 12px;
+    --spacing-8: 8px;
+    --spacing-4: 4px;
+    --spacing-2: 2px;
+
+    /* Fuentes */
+    --bold: 700;
+    --semibold: 600;
+    --medium: 500;
+    --regular: 400;
+    --thin: 200;
+
+    --font-base: "Poppins", sans-serif;
+
+    /* Varios */
+    --br-primary: 12px;
+    --br-secondary: 8px;
+    
+    --bs-primary: 0 1px 4px 0 rgba(0,0,0,.05),0 4px 40px 0 rgba(0,0,0,.06);
+
+    /* Transiciones */
+    --tr-03: 0.3s ease-in-out;
+}
