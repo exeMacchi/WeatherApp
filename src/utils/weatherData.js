@@ -14,8 +14,8 @@ const organizeMainForecast = (weatherData) => {
     const localHour = dateArray[1];
     const locate = `${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}`;
     const icon = getWeatherIcon(weatherData.current.condition.code, Number(localHour.match(/^\d+/)[0]));
-    const actualTemperature = `${weatherData.current.temp_c}°C`;
-    const thermalSensation = `${weatherData.current.feelslike_c}°C`;
+    const actualTemperature = `${weatherData.current.temp_c}°`;
+    const thermalSensation = `${weatherData.current.feelslike_c}°`;
     const humidity = `${weatherData.current.humidity}%`;
     const wind = `${weatherData.current.wind_kph} km/h`;
 
