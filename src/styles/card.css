@@ -1,0 +1,13 @@
+.card{
+    margin-bottom: var(--spacing-24);
+    padding: var(--spacing-24);
+    background: var(--bg-card);
+    border-radius: var(--br-primary);
+    box-shadow: var(--bs-primary);
+}
+
+.card__title{
+    margin-bottom: var(--spacing-24);
+    font-size: 1.5rem;
+    color: var(--text-black-medium);
+}
