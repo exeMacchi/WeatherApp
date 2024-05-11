@@ -1,8 +1,6 @@
 import ForecastCard from "./ForecastCard";
 import "./Forecast.css";
 
-
-
 const Forecast = ({ daily, dailyForecast, weekForecast }) => {
     return (
         <section className="forecast__container">
