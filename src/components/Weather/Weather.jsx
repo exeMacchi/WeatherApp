@@ -6,7 +6,11 @@ import './weather.css'
 
 const Weather = ({isLoading, show, weatherData}) => {
 
-    if (isLoading == true) {return <Spinner/>}
+    if (isLoading == true) {return (
+        <section className="weather-container">
+            <Spinner/>
+        </section>
+    )}
 
     if (show) {
         // Se actualiza el MainGrid
@@ -16,7 +20,11 @@ const Weather = ({isLoading, show, weatherData}) => {
         // Se actualiza el Forecast week
         const weekForecast = organizeWeekForecast(weatherData.forecast.forecastday);
         return (
-            <section className="weather-container">
+            <section className="weather-container" 
+            style={{
+                opacity: !show ? "0" : "1",
+                visibility: !show ? "hidden" : "visible",}
+            }>
                 <Current weather={mainForecast}/>
                 <Forecast daily dailyForecast={dailyForecast}/>
                 <Forecast weekForecast={weekForecast}/>
