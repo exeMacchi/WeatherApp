@@ -1,4 +1,5 @@
 .card{
+    width: 100%;
     margin-bottom: var(--spacing-24);
     padding: var(--spacing-24);
     background: var(--bg-card);
