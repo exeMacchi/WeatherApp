@@ -4,9 +4,6 @@ const ForecastCard = ({time, icon, max, min}) => {
     return (
         <article className="forecast-card__container">
             <span className="forecast-card__time">{time}</span>
-            {/* <span className="material-symbols-outlined forecast-card__icon">
-                {icon}
-            </span> */}
             <img className="current__icon--forecast" src={`/img/icons/${icon}.png`} alt={`${icon}`}/>
             {
                 min ?
