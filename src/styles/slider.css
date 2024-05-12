@@ -1,0 +1,34 @@
+.slider-container{
+    position: relative;
+}
+
+.slider{
+    padding: 0 2rem;
+}
+
+.slider-btn{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    background: none;
+    position: absolute;
+    top: 43%;
+    font-size: 3rem;
+    color: var(--text-black-soft);
+    cursor: pointer;
+    transition: color var(--tr-03);
+}
+
+.slider-btn:hover{
+    color: var(--text-black-solid);
+}
+
+.slider-btn--left{
+    left: 0;
+}
+
+.slider-btn--right{
+    right: 0;
+}
