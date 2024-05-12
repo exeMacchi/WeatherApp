@@ -1,13 +1,14 @@
 @import url('../../../styles/card.css');
 
 .current-container{
-    background: var(--bg-gr);
+    width: 100%;
+    margin: var(--spacing-64) 0;
     color: var(--text-white-hard);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-48);
-    text-shadow: 0px 0px 12px rgba(0,0,0,0.18);
+    gap: var(--spacing-120);
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 }
 
 /* Current location */
@@ -37,8 +38,13 @@
     gap: var(--spacing-32);
 }
 
-.current__temp-icon{
-    font-size: 12rem;
+.current__icon{
+    max-width: 170px;
+    filter: drop-shadow(0px 0px 12px rgba(0,0,0,0.15));
+}
+
+.current__icon--forecast{
+    max-width: 50px;
 }
 
 .current__temp{
@@ -50,8 +56,68 @@
 .current-detail{
     padding: var(--spacing-12);
     margin: var(--spacing-16) 0;
-    color: var(--text-black-solid);
     width: 50%;
     display: flex;
     justify-content: space-between;
+    text-shadow: none;
+}
+
+.current-detail__item{
+    display: flex;
+    gap: var(--spacing-8);
+}
+
+.current-detail__icon{
+    color: var(--text-black-medium);
+}
+
+.current-detail__info{
+    color: var(--text-black-solid);
+    font-size: 1.5rem;
+    font-weight: var(--semibold);
+    letter-spacing: 1.5px;
+}
+
+/* Background icons style */
+
+.bg--sunny{
+    background: var(--dg-lightblue);
+}
+.bg--partly_cloudy_night{
+    background: var(--dg-deepblue);
+}
+.bg--clear_night{
+    background: var(--dg-darkblue);
+}
+.bg--partly_cloudy_day{
+    background: var(--dg-purple);
+}
+.bg--cloud{
+    background: var(--dg-lightgray);
+}
+.bg--foggy{
+    background: var(--dg-lightgray);
+}
+.bg--weather_mix{
+    background: var(--dg-weather_mix);
+}
+.bg--weather_snowy{
+    background: var(--dg-ultralightblue);
+}
+    .--weather_snowy{
+        color: var(--text-black-solid);
+        text-shadow: none;
+    }
+.bg--rainy{
+    background: var(--dg-gray);
+}
+.bg--thunderstorm{
+    background: var(--dg-gray);
+}
+.bg--routine{
+    background: var(--dg-routine);
+}
+
+.bg--default{
+    background: var(--dg-default);
 }
