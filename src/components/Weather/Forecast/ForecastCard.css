@@ -2,23 +2,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: var(--spacing-24);
 }
 
 .forecast-card__time {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: var(--medium);
+    letter-spacing: 1px;
 }
 
 .forecast-card__icon {
-    font-size: 5rem;
+    font-size: 5.5rem;
+    color: #8777e6;
 }
 
 .forecast-card__week {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: var(--spacing-8);
+    font-weight: var(--semibold);
 }
 
 .forecast-card__max {
+    font-weight: var(--semibold);
     font-size: 1.5rem;
 }
 

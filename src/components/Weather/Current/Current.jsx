@@ -3,14 +3,17 @@ import "./Current.css";
 
 const Current = ({weather}) => {
     return (
-        <section className="card current-container">
+        <section className={`current-container
+                             ${weather.icon == "snowy" ? "--weather_snowy":""}
+                             `}>
+
             <section className="current-location">
                 <h2 className="current__local-date"><span>Hora local:</span> {weather.localHour}</h2>
                 <h1 className="current__location">{weather.locate}</h1>
             </section>
 
             <section className="current-temp">
-                <span className="current__temp-icon material-symbols-outlined">{weather.icon}</span>
+                <img className="current__icon" src={`/img/icons/${weather.icon}.png`} alt={`${weather.icon}`} />
                 <span className="current__temp">{weather.actualTemperature}</span>
             </section>
 
