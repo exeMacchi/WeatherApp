@@ -9,7 +9,7 @@ const Forecast = ({ daily, dailyForecast, weekForecast }) => {
     const settings = {
         dots: false,
         infinite: false,
-        slidesToShow: 5,
+        slidesToShow: daily ? 7 : 5,
     }
 
     return (
