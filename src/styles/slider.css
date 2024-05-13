@@ -6,29 +6,18 @@
     padding: 0 2rem;
 }
 
-.slider-btn{
-    width: fit-content;
-    height: fit-content;
-    padding: 0;
-    margin: 0;
-    border-style: none;
-    background: none;
-    position: absolute;
-    top: 43%;
-    font-size: 3rem;
-    color: var(--text-black-soft);
-    cursor: pointer;
-    transition: color var(--tr-03);
+/* Fix para flechas de navegacion */
+.slick-prev:before,
+.slick-next:before{
+    color: var(--text-black-solid) !important;
+    font-size: 3rem !important;
+    transition: opacity var(--tr-03);
 }
 
-.slider-btn:hover{
-    color: var(--text-black-solid);
+.slick-prev{
+    left: 0 !important;
 }
 
-.slider-btn--left{
-    left: 0;
-}
-
-.slider-btn--right{
-    right: 0;
+.slick-next{
+    right: 0 !important;
 }
