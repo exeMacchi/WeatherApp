@@ -1,4 +1,5 @@
-import { getWeatherIcon } from "./auxiliary"
+import { getWeatherIcon } from "./auxiliary";
+import { formatFullDate, formatDayOfWeek } from "./dateFormat";
 
 /**
  * Devolver un objeto con la información necesaria para el componente \<MainGrid/>,
@@ -9,8 +10,7 @@ import { getWeatherIcon } from "./auxiliary"
  */
 const organizeCurrentForecast = (weatherData) => {
     const dateArray = weatherData.location.localtime.split(" ");
-    // TODO: formatear fecha
-    // const date = formateDate(dateArray[0]);
+    const date = formatFullDate(dateArray[0]);
     const localHour = dateArray[1];
     const locate = `${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}`;
     const icon = getWeatherIcon(weatherData.current.condition.code, Number(localHour.match(/^\d+/)[0]));
@@ -19,16 +19,7 @@ const organizeCurrentForecast = (weatherData) => {
     const humidity = `${weatherData.current.humidity}%`;
     const wind = `${weatherData.current.wind_kph} km/h`;
 
-    return {
-        date: dateArray[0],
-        localHour: localHour,
-        locate: locate,
-        icon: icon,
-        actualTemperature: actualTemperature,
-        thermalSensation: thermalSensation,
-        humidity: humidity,
-        wind: wind
-    }
+    return { date, localHour, locate, icon, actualTemperature, thermalSensation, humidity, wind }
 }
 
 /**
@@ -80,14 +71,13 @@ const organizeWeekForecast = (forecast) => {
     // i es 1 porque es el día posterior al día actual (0)
     for (let i = 1; i <= 7; i++) {
         let dayForecast = {
-            day: forecast[i].date,
+            day: formatDayOfWeek(forecast[i].date),
             icon: getWeatherIcon(forecast[i].day.condition.code, 12),
             max: `${forecast[i].day.maxtemp_c}°C`,
             min: `${forecast[i].day.mintemp_c}°C`
         }
         weekForecast.push(dayForecast);
     }
-
     return weekForecast;
 }
 

@@ -8,7 +8,10 @@ const Current = ({weather}) => {
                             `}>
 
             <section className="current-location">
-                <h2 className="current__local-date"><span>Hora local:</span> {weather.localHour}</h2>
+                <h2 className="current__local-date">
+                    <span>{weather.date} | </span>
+                    <span>Hora local:</span> {weather.localHour}
+                </h2>
                 <h1 className="current__location">{weather.locate}</h1>
             </section>
 
