@@ -5,18 +5,7 @@ import {getWeatherIcon} from "../utils/auxiliary";
 
 // Componentes
 import Search from "../components/Search/Search";
-import "./LandingPage.css";
 import Weather from "../components/Weather/Weather";
-
-
-// El color del background se cambia según la información de la API. El ícono depende de
-// la información que se recibe.
-/* if (weatherTest.icon === "rainy") {
-    document.body.classList.add("background__rainy");
-}
-else if (weatherTest.icon === "sunny") {
-    document.body.classList.add("background__sunny");
-} */
 
 const LandingPage = () => {
     const [show, setShow] = useState(false)
@@ -34,12 +23,11 @@ const LandingPage = () => {
     const handleOnSearchChange = async (searchData) => {
         try {
             setLoading(true)
-            await getWeatherData(searchData.value).then ((data) => {
-                setWeatherData(data)
-                setClassMain(getClass(data))
-                setLoading(false)
-                setShow(true)
-            });
+            const weatherDataAPI = await getWeatherData(searchData.value)
+            setWeatherData(weatherDataAPI);
+            setClassMain(getClass(weatherDataAPI));
+            setLoading(false);
+            setShow(true);
         }
         catch (err) {
             console.error(err);
@@ -52,11 +40,9 @@ const LandingPage = () => {
         <main className={`bg--${classMain}`}>
             <div className="container">
                 <Search onSearchChange={handleOnSearchChange}/>
-                <Weather
-                    isLoading={loading}
-                    show={show}
-                    weatherData={weatherData}
-                    />
+                <Weather isLoading={loading}
+                         show={show}
+                         weatherData={weatherData}/>
             </div>
         </main>
     );

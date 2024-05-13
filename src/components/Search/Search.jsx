@@ -6,14 +6,6 @@ import "./Search.css";
 const Search = ({ onSearchChange }) => {
     const [ searchValue, setSearchValue ] = useState(null);
 
-    // const handleInputChange = event => {
-    //     setSearchValue(event.target.value);
-    //     console.log(searchValue);
-    // }
-    // const handleSearchButton = () => {
-    //     getCity(searchValue);
-    // }
-
     const handleInputChange = (searchInput) => {
         setSearchValue(searchInput);
         onSearchChange(searchInput);
@@ -34,7 +26,7 @@ const Search = ({ onSearchChange }) => {
 
     return (
         <section className="search__container">
-            <AsyncPaginate placeholder="Buscar"
+            <AsyncPaginate placeholder="Buscar: ciudad, país"
                            // Retraso en la llamada a la API, esto permite al usuario 
                            // tipear la ciudad y que no llame a la API por cada tipeo.
                            debounceTimeout={1000} 

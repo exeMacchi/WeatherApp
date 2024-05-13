@@ -1,6 +1,5 @@
 /**
- * Devolver un ícono de clima de Google Icons correspondiente con el código que viene con
- * el ícono de la weatherAPI.
+ * Devolver un texto de clima correspondiente con el código que viene con el ícono de la weatherAPI.
  * @param {Number} weatherCode - Código del ícono de tiempo que viene con la weatherAPI
  * @param {Number} hour - Hora actual
  * @returns 

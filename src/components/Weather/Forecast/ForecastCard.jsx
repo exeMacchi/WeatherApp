@@ -8,9 +8,9 @@ const ForecastCard = ({time, icon, max, min}) => {
             {
                 min ?
                     <div className="forecast-card__week">
-                        <span className="forecast-card__min">{min}</span>
-                        <span>/</span>
                         <span className="forecast-card__max">{max}</span>
+                        <span>/</span>
+                        <span className="forecast-card__min">{min}</span>
                     </div>
                     :
                     <p className="forecast-card__max">{max}</p>

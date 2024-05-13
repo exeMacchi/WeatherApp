@@ -25,7 +25,7 @@
 
 .forecast-card__max {
     font-weight: var(--semibold);
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .forecast-card__min {

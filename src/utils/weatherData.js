@@ -7,7 +7,7 @@ import { getWeatherIcon } from "./auxiliary"
  * @param {Object} weatherData - Objeto con toda la información del clima de la ciudad seleccionada.
  * @returns {Object}
  */
-const organizeMainForecast = (weatherData) => {
+const organizeCurrentForecast = (weatherData) => {
     const dateArray = weatherData.location.localtime.split(" ");
     // TODO: formatear fecha
     // const date = formateDate(dateArray[0]);
@@ -43,7 +43,7 @@ const organizeDailyForecast = (forecast, localHour) => {
     const dailyForecast = [];
     let repeat = 0;
 
-    for (let hour = currentTime + 1; hour < 24 && repeat < 6; hour++, repeat++) {
+    for (let hour = currentTime + 1; hour < 24 && repeat < 10; hour++, repeat++) {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[0].hour[hour].condition.code, Number(hour)),
@@ -53,8 +53,8 @@ const organizeDailyForecast = (forecast, localHour) => {
     }
 
     // En el caso de ser necesario (se llegó al límite de horas del día actual),
-    // se extraerá información del siguiente día hasta llegar a 6 repeticiones.
-    for (let hour = 0; repeat < 6; hour++, repeat++) {
+    // se extraerá información del siguiente día hasta llegar a 10 repeticiones.
+    for (let hour = 0; repeat < 10; hour++, repeat++) {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[1].hour[hour].condition.code, Number(hour)),
@@ -63,15 +63,22 @@ const organizeDailyForecast = (forecast, localHour) => {
         dailyForecast.push(hourForecast);
     }
     console.groupCollapsed("dailyForecast")
-    console.log(dailyForecast);
+        console.log(dailyForecast);
     console.groupEnd();
     return dailyForecast;
 }
 
+/**
+ * Devolver un array de objetos donde cada objeto representa el pronóstico de los días
+ * posteriores al día actual
+ * @param {Array} forecast - Array de objetos donde cada objeto es un día
+ * @returns 
+ */
 const organizeWeekForecast = (forecast) => {
     const weekForecast = [];
 
-    for (let i = 1; i < 7; i++) {
+    // i es 1 porque es el día posterior al día actual (0)
+    for (let i = 1; i <= 7; i++) {
         let dayForecast = {
             day: forecast[i].date,
             icon: getWeatherIcon(forecast[i].day.condition.code, 12),
@@ -85,7 +92,7 @@ const organizeWeekForecast = (forecast) => {
 }
 
 export { 
-    organizeMainForecast, 
+    organizeCurrentForecast, 
     organizeDailyForecast, 
     organizeWeekForecast
 };
