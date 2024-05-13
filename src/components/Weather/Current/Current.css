@@ -56,7 +56,7 @@
 .current-detail{
     padding: var(--spacing-12);
     margin: var(--spacing-16) 0;
-    width: 50%;
+    max-width: 550px;
     display: flex;
     justify-content: space-between;
     text-shadow: none;
@@ -64,11 +64,13 @@
 
 .current-detail__item{
     display: flex;
+    align-items: center;
     gap: var(--spacing-8);
 }
 
 .current-detail__icon{
     color: var(--text-black-medium);
+    font-size: 2.7rem;
 }
 
 .current-detail__info{
