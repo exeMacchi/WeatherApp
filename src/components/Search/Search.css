@@ -10,6 +10,14 @@
     color: #222;
 }
 
+    .search__bar .css-1u9des2-indicatorSeparator {
+        width: 0px;
+    }
+
+    /* .search__bar .css-1xc3v61-indicatorContainer {
+        display: none;
+    } */
+
 .search__button {
     background-color: transparent;
     border: 1px solid #fff;

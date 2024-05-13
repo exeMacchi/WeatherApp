@@ -4,8 +4,8 @@ import "./Current.css";
 const Current = ({weather}) => {
     return (
         <section className={`current-container
-                             ${weather.icon == "snowy" ? "--weather_snowy":""}
-                             `}>
+                             ${ weather.icon === "snowy" ? "--weather_snowy" : "" }
+                            `}>
 
             <section className="current-location">
                 <h2 className="current__local-date"><span>Hora local:</span> {weather.localHour}</h2>
