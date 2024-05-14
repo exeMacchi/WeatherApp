@@ -6,6 +6,7 @@ import { getWeatherIcon } from "../utils/auxiliary";
 // Componentes
 import Search from "../components/Search/Search";
 import Weather from "../components/Weather/Weather";
+import Presentation from "../components/Presentation/Presentation";
 
 const LandingPage = () => {
     const [show, setShow] = useState(false);
@@ -37,12 +38,12 @@ const LandingPage = () => {
     }
 
     // Al cargar la aplicación por primera vez
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(async position => {
-            const latlong = `${position.coords.latitude},${position.coords.longitude}`;
-            await fetchWeatherData(latlong);
-        })
-    }, []);
+    // useEffect(() => {
+    //     navigator.geolocation.getCurrentPosition(async position => {
+    //         const latlong = `${position.coords.latitude},${position.coords.longitude}`;
+    //         await fetchWeatherData(latlong);
+    //     })
+    // }, []);
 
 
     // Cuando se selecciona una ciudad en el buscador.
@@ -53,10 +54,27 @@ const LandingPage = () => {
     return (
         <main className={`bg--${classMain}`}>
             <div className="container">
+                {/* Esto después cambiarlo por el componente Header o similar */}
+                <header style={{display: "flex", justifyContent: "space-between", fontSize: "1.5rem"}}>
+                    <span>WeatherApp</span>
+                    <nav>
+                        <ul style={{display: "flex", gap: "8px"}}>
+                            <li>Mi ubicación</li>
+                            <li>Iniciar sesión</li>
+                        </ul>
+                    </nav>
+                </header>
+
                 <Search onSearchChange={handleOnSearchChange}/>
-                <Weather isLoading={loading}
-                         show={show}
-                         weatherData={weatherData}/>
+                {
+                    weatherData
+                    ?
+                    <Weather isLoading={loading}
+                            show={show}
+                            weatherData={weatherData}/>
+                    :
+                    <Presentation/>
+                }
             </div>
         </main>
     );
