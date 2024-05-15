@@ -1,34 +1,19 @@
 // Funciones
-import { useState, useEffect } from "react";
-import getWeatherData from "../services/weatherAPI";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { getWeatherIcon } from "../utils/auxiliary";
 
+//Paginas
+import HomePage from "./HomePage/HomePage";
+import WeatherPage from "./WeatherPage/WeatherPage";
+import Login from "./Login/Login";
+
+
 // Componentes
-import Search from "../components/Search/Search";
-import Weather from "../components/Weather/Weather";
+import Navbar from "../components/Nav/Navbar";
 
 const LandingPage = () => {
-    const [show, setShow] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const [weatherData, setWeatherData] = useState(null);
     const [classMain, setClassMain] = useState('default');
-
-    // Obtener la información en la API
-    const fetchWeatherData = async (location) => {
-        try {
-            setLoading(true)
-            const weatherDataAPI = await getWeatherData(location)
-            setWeatherData(weatherDataAPI);
-            setClassMain(getClass(weatherDataAPI));
-            setLoading(false);
-            setShow(true);
-        }
-        catch (err) {
-            console.error(err);
-            setLoading(false)
-            setShow(false)
-        }
-    }
 
     // Obtener el ícono para cambiar el background
     const getClass = (weatherData) => {
@@ -36,29 +21,26 @@ const LandingPage = () => {
         return getWeatherIcon(weatherData.current.condition.code, Number(localHour.match(/^\d+/)[0]));
     }
 
-    // Al cargar la aplicación por primera vez
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(async position => {
-            const latlong = `${position.coords.latitude},${position.coords.longitude}`;
-            await fetchWeatherData(latlong);
-        })
-    }, []);
-
-
     // Cuando se selecciona una ciudad en el buscador.
     const handleOnSearchChange = async (searchData) => {
-        await fetchWeatherData(searchData.value);
+        await fetchWeatherData(searchData.lat, searchData.lon);
     }
 
     return (
-        <main className={`bg--${classMain}`}>
-            <div className="container">
-                <Search onSearchChange={handleOnSearchChange}/>
-                <Weather isLoading={loading}
-                         show={show}
-                         weatherData={weatherData}/>
+        <BrowserRouter>
+            <div  className={`bg--${classMain}`}>
+                <header className="container">
+                    <Navbar isLogged={false}/>
+                </header>
+                <main className="container">
+                    <Routes>
+                        <Route path='/' element={<HomePage/>}/>
+                        <Route path="/weather" element={<WeatherPage/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                    </Routes>
+                </main>
             </div>
-        </main>
+        </BrowserRouter>
     );
 }
 
