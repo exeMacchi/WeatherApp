@@ -44,3 +44,22 @@
 .nav__icon{
     font-size: 2rem;
 }
+
+
+.nav__logout {
+    border: none;
+    border: 1px solid var(--text-white-hard);
+    color: var(--text-white-hard);
+    background-color: transparent;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding: var(--spacing-8);
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+    .nav__logout:hover {
+        background-color: burlywood;
+    }

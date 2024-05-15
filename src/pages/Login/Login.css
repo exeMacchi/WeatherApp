@@ -1,0 +1,60 @@
+.login__container {
+    display: grid;
+    place-items: center;
+}
+
+    .login__form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-32);
+    }
+
+.login__title {
+    font-size: 6rem;
+}
+
+.login__email-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+    .login__email-label {
+        font-size: 2rem;
+    }
+
+.login__pass-container {
+    display: flex;
+    flex-direction: column;
+}
+    .login__pass-label {
+        font-size: 2rem;
+    }
+
+
+.login__input {
+    font-size: 1.5rem;
+    height: 50px;
+    padding-left: var(--spacing-16);
+    border-radius: 15px;
+}
+
+.login__signup {
+    font-size: 2rem;
+}
+
+.login__submit {
+    border: none;
+    background-color: #fff;
+    color: black;
+    border-radius: 15px;
+    transition: background-color 0.5s ease;
+    height: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+    .login__submit:hover {
+        background-color: burlywood;
+    }

@@ -1,9 +1,10 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
 import { Link, useNavigate } from "react-router-dom"
+import { signOut } from "firebase/auth"
+import { auth } from "../../services/firebase"
 import "./Navbar.css"
 
-const Navbar = ({isLogged}) => {
-
+const Navbar = ({ isLogged, setIsLogged }) => {
     const navigate = useNavigate()
 
     const getPosition = () => {
@@ -11,6 +12,19 @@ const Navbar = ({isLogged}) => {
             navigate(`weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
         })
     }
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            console.log("Se cierra la sesión");
+            setIsLogged(false);
+            navigate("/");
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }
+
 
     return(
             <nav className="nav">
@@ -42,10 +56,10 @@ const Navbar = ({isLogged}) => {
                         </Link>
                     </li>
                     <li className="nav__li">
-                        <Link className="nav__link" to="/" >
+                        <button type="button" className="nav__logout" onClick={handleLogout}>
                             <Icon className="nav__icon" icon="tabler:logout" />
                             <span className="nav__icon-text">Salir</span>
-                        </Link>
+                        </button>
                     </li>
                 </ul>)
                 :(

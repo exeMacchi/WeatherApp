@@ -12,17 +12,18 @@ import Navbar from "../components/Nav/Navbar";
 
 const LandingPage = () => {
     const [ bgClass, setBgClass ] = useState("default"); // Controlar el background
+    const [ isLogged, setIsLogged] = useState(false); // Controlar la sesión
 
     return (
         <div className={`bg--${bgClass}`}>
             <header className="container">
-                <Navbar isLogged={false}/>
+                <Navbar isLogged={isLogged} setIsLogged={setIsLogged}/>
             </header>
             <main className="container">
                 <Routes>
                     <Route path='/' element={<HomePage setBgClass={setBgClass}/>}/>
                     <Route path="/weather" element={<WeatherPage setBgClass={setBgClass}/>}/>
-                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/login" element={<Login setBgClass={setBgClass} setIsLogged={setIsLogged}/>}/>
                 </Routes>
             </main>
         </div>

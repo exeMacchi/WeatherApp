@@ -32,9 +32,11 @@ const organizeCurrentForecast = (weatherData) => {
 const organizeDailyForecast = (forecast, localHour) => {
     const currentTime = Number(localHour.trimStart().match(/^\d+/)[0]);
     const dailyForecast = [];
+    const MAX_HOURS = 12;
     let repeat = 0;
+    
 
-    for (let hour = currentTime + 1; hour < 24 && repeat < 10; hour++, repeat++) {
+    for (let hour = currentTime + 1; hour < 24 && repeat < MAX_HOURS; hour++, repeat++) {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[0].hour[hour].condition.code, Number(hour)),
@@ -45,7 +47,7 @@ const organizeDailyForecast = (forecast, localHour) => {
 
     // En el caso de ser necesario (se llegó al límite de horas del día actual),
     // se extraerá información del siguiente día hasta llegar a 10 repeticiones.
-    for (let hour = 0; repeat < 10; hour++, repeat++) {
+    for (let hour = 0; repeat < MAX_HOURS; hour++, repeat++) {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[1].hour[hour].condition.code, Number(hour)),
