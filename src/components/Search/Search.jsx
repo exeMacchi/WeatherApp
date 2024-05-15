@@ -1,14 +1,17 @@
-import { getCity } from "../../services/geoDB_api.js"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AsyncPaginate } from "react-select-async-paginate"
+import { getCity } from "../../services/geoDB_api.js"
 import "./Search.css";
 
-const Search = ({ onSearchChange }) => {
+const Search = () => {
     const [ searchValue, setSearchValue ] = useState(null);
+
+    const navigate = useNavigate()
 
     const handleInputChange = (searchInput) => {
         setSearchValue(searchInput);
-        onSearchChange(searchInput);
+        navigate(`/weather?lat=${searchInput.lat}&lon=${searchInput.lon}`)
     }
 
     const handleLoadOptions = async (searchInput) => {
@@ -16,13 +19,13 @@ const Search = ({ onSearchChange }) => {
         return {
             options: cities.data.map(city => {
                 return {
-                    value: `${city.latitude},${city.longitude}`,
+                    lat: city.latitude,
+                    lon: city.longitude,
                     label: `${city.name}, ${city.region}, ${city.country}`
                 }
             })
         }
     }
-
 
     return (
         <section className="search__container">

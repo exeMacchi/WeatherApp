@@ -1,0 +1,47 @@
+.nav{
+    margin: var(--spacing-16) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dark-solid);
+    font-size: 1.5rem;
+}
+
+/* Logo */
+.nav__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.nav__logo-icon{
+    font-size: 3.5rem;
+}
+
+.nav__logo-text{
+    font-weight: var(--bold);
+    letter-spacing: 2px;
+}
+
+.nav__ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: var(--spacing-16);
+}
+
+.nav__link{
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+    cursor: pointer;
+}
+
+.nav__link:visited{
+    color: var(--text-dark-solid);
+}
+
+.nav__icon{
+    font-size: 2rem;
+}
