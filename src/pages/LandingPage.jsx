@@ -3,11 +3,10 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { getWeatherIcon } from "../utils/auxiliary";
 
-//Paginas
+// Paginas
 import HomePage from "./HomePage/HomePage";
 import WeatherPage from "./WeatherPage/WeatherPage";
 import Login from "./Login/Login";
-
 
 // Componentes
 import Navbar from "../components/Nav/Navbar";
@@ -28,7 +27,7 @@ const LandingPage = () => {
 
     return (
         <BrowserRouter>
-            <div  className={`bg--${classMain}`}>
+            <div className={`bg--${classMain}`}>
                 <header className="container">
                     <Navbar isLogged={false}/>
                 </header>
