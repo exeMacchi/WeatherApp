@@ -5,10 +5,21 @@
     min-height: 100vh;
 }
 
-.hero__title {
-    font-size: 4rem;
-    margin: var(--spacing-24);
+.hero__title-container {
+    display: flex;
+    align-items: center;
 }
+
+    .hero__title-logo {
+        font-size: 8rem;
+    }
+
+    .hero__title {
+        font-size: 4rem;
+        margin: var(--spacing-24) 0;
+        letter-spacing: 4px;
+        font-weight: var(--bold);
+    }
 
 .hero__description-container {
     position: relative;

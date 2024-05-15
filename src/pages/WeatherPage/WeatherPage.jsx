@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import getWeatherData from "../../services/weatherAPI"
+import { getWeatherIcon } from "../../utils/auxiliary";
+
+// Componentes
 import Search from "../../components/Search/Search"
-import UserLocation from "../../components/Search/UserLocation"
 import Weather from "../../components/Weather/Weather"
 
-const WeatherPage = () => {
+const WeatherPage = ({ setBgClass }) => {
     const [searchParams] = useSearchParams() // Obtiene los querys de lat y lon de la URL
     const [show, setShow] = useState(false); // Mostrar el componente del weather
     const [loading, setLoading] = useState(false); // Mostrar el spinner de carga
@@ -17,6 +19,7 @@ const WeatherPage = () => {
             setLoading(true)
             const weatherDataAPI = await getWeatherData(lat, lon)
             setWeatherData(weatherDataAPI);
+            setBgClass(getClass(weatherDataAPI));
             setLoading(false);
             setShow(true);
         }
@@ -25,7 +28,12 @@ const WeatherPage = () => {
             setLoading(false)
             setShow(false)
         }
+    }
 
+    // Obtener el ícono para cambiar el background
+    const getClass = (weatherData) => {
+        const localHour = (weatherData.location.localtime.split(" "))[1];
+        return getWeatherIcon(weatherData.current.condition.code, Number(localHour.match(/^\d+/)[0]));
     }
 
     useEffect(() => {
@@ -34,7 +42,6 @@ const WeatherPage = () => {
 
     return(
         <>
-            <UserLocation/>
             <Search/>
             <Weather isLoading={loading}
                      show={show}

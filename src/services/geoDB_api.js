@@ -28,14 +28,7 @@ const getCity = async (searchValue) => {
         if (!res.ok) {
             throw new Error("Error: " + res.statusText);
         }
-        const data = await res.json();
-
-        // await fetch(`http://api.weatherapi.com/v1/search.json?key=820ab2966c224b35ad7212216240805&q=${city}&lang=es`)
-        //         .then(res => res.json())
-        //         .then(data => console.log(data))
-        //         .catch(err => console.error(err));
-
-        return data;
+        return await res.json();
     }
     catch (err) {
         console.error(err);
@@ -57,7 +50,7 @@ const getCountryCode = async (country) => {
         }
         const data = await res.json();
         // Delay de un segundo necesario por el límite de peticiones por segundo.
-        await new Promise((resolve) => setTimeout(resolve, 1000)); 
+        await new Promise((resolve) => setTimeout(resolve, 1100)); 
         return data.data[0].code;
     }
     catch (err) {

@@ -1,4 +1,5 @@
 import { Fade } from "react-awesome-reveal"
+import { Icon } from "@iconify-icon/react/dist/iconify.js"
 import "./Presentation.css";
 
 const Presentation = () => {
@@ -7,7 +8,11 @@ const Presentation = () => {
         <>
             <section className="hero__container">
                 <Fade triggerOnce={true}>
-                    <h1 className="hero__title">Weather App</h1>
+                    <div className="hero__title-container">
+                        <Icon className="hero__title-logo"
+                              icon="tabler:cloud" />
+                        <h1 className="hero__title">WeatherAPP</h1>
+                    </div>
                 </Fade>
                 <div className="hero__description-container">
                     <Fade cascade={true}
@@ -15,7 +20,7 @@ const Presentation = () => {
                           delay={500} 
                           damping={0.5}>
                         <figure className="hero__image-container">
-                            <img src="/img/presentation/Weather.png"
+                            <img src="/img/home/Weather.png"
                                  alt="test"
                                  className="hero__image"/>
                         </figure>
@@ -34,7 +39,7 @@ const Presentation = () => {
             <section className="daily-forecast__container">
                 <Fade cascade={true}
                       triggerOnce={true}
-                      damping={0.8}>
+                      damping={0.5}>
                     <div className="daily-forecast__description-container">
                         <h2 className="daily-forecast__title">Pronóstico diario</h2>
                         <p className="daily-forecast__text">
@@ -46,7 +51,7 @@ const Presentation = () => {
                         </p>
                     </div>
                     <figure className="daily-forecast__image-container">
-                        <img src="/img/presentation/Forecast-Daily.png"
+                        <img src="/img/home/Forecast-Daily.png"
                             alt="test"
                             className="daily-forecast__image"/>
                     </figure>
@@ -55,7 +60,7 @@ const Presentation = () => {
 
             <section className="week-forecast__container">
                 <Fade cascade={true} 
-                      damping={0.8}
+                      damping={0.5}
                       triggerOnce={true}
                       style={{display: "flex", justifyContent: "flex-end"}}>
                     <div className="week-forecast__description-container">
@@ -69,7 +74,7 @@ const Presentation = () => {
                         </p>
                     </div>
                     <figure className="week-forecast__image-container">
-                        <img src="/img/presentation/Forecast-Week.png"
+                        <img src="/img/home/Forecast-Week.png"
                             alt="test"
                             className="week-forecast__image"/>
                     </figure>
