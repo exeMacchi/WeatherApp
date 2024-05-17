@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { addFavorite, getAllFavorites } from "../../utils/firestore"
+import { auth } from "../../services/firebase"
+import { onAuthStateChanged } from "firebase/auth"
 
 const Favorites = ({isLogged}) => {
     const navigate = useNavigate()
@@ -8,28 +10,33 @@ const Favorites = ({isLogged}) => {
 
     const variable_de_prueba = {
         tag: "TEST_tag",
-        location: "TEST_locationx2",
+        location: "TEST_locationxsaaa",
         lat: "TEST_lat",
         lon: "TEST_lon"
     }
-    
+
     const handleAddFavorite = async () => {
         await addFavorite(variable_de_prueba)
     }
 
-    const obtener = async () => {
-        await getAllFavorites().then((res) =>{
-            console.log('LISTA FAVORITOS: ',res);
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            getAllFavorites(user.uid).then((res) =>{
+                setFavorites(res)
+            })
         })
-    }
+    },[])
 
     if (isLogged) {
         return(
-            <>
+            <div className="card">
                 <h1>Favorites</h1>
-                <button onClick={handleAddFavorite}>AÑADIR</button>
-                <button onClick={obtener}>OBTENER</button>
-            </>
+                <ul>
+                    {favorites.map( (fav) => (
+                        <li key={fav.id}>{fav.location}</li>
+                    ) )}
+                </ul>
+            </div>
         )
     }else{
         navigate('/login')
