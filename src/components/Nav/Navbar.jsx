@@ -50,7 +50,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                         </Link>
                     </li>
                     <li className="nav__li">
-                        <Link className="nav__link" to="/" >
+                        <Link className="nav__link" to="/favorites" >
                             <Icon className="nav__icon" icon="tabler:star" />
                             <span className="nav__icon-text">Favoritos v</span>
                         </Link>
