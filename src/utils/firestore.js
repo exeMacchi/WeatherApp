@@ -45,18 +45,23 @@ const addFavorite = (favorite_data) => {
 }
 
 //Obtiene el listado de todos los favoritos
-const getAllFavorites = async () => {
-    //Obtiene el UID del usuario
-    await onAuthStateChanged(auth, async (user) => {
-        const res = await getDocs(collection(db,'users',user.uid,'favorites'))
-        return await res.docs.map ((doc) => (
-            {
-                ...doc.data(),
-                id:doc.id
-            }
-        ))
-    })
+const getAllFavorites = async (uid) => {
+    const favorites = await getDocs(collection(db,'users',uid,'favorites'))
+    let listFav = []
+    favorites.forEach((doc) => listFav.push(doc.data()) )
+    return listFav
 }
+
+/* 
+
+res.docs.map ((doc) => (
+                {
+                    ...doc.data(),
+                    id:doc.id
+                }
+            ))
+
+*/
 
 export { 
     generateHash,
