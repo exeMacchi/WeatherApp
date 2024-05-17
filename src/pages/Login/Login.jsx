@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../../services/firebase";
-import { getUserData } from "../../utils/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 import "./Login.css";
@@ -19,10 +18,9 @@ const Login = ({ setBgClass, setIsLogged }) => {
         try {
             e.preventDefault();
             const userCredentials = await signInWithEmailAndPassword(auth, email, password);
-            const userData = await getUserData(userCredentials.user.uid);
-            if (userData) {
+            if (userCredentials) {
                 setIsLogged(true);
-                navigate(`/weather?lat=${userData.lat}&lon=${userData.long}`)
+                navigate(`/favorites`)
             }
         }
         catch (err) {
@@ -64,7 +62,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
                                onChange={e => setPassword(e.target.value)}/>
                     </div>
                     <p className="login__signup">
-                        ¿No tienes una cuenta? <Link to="#">Regístrate</Link>
+                        ¿No tienes una cuenta? <Link to="/register">Regístrate</Link>
                     </p>
                     
                     <button type="submit"
