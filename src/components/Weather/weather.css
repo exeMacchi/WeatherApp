@@ -6,3 +6,10 @@
     opacity: 0;
     visibility: hidden
 }
+
+.favorite-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: var(--spacing-16);
+}

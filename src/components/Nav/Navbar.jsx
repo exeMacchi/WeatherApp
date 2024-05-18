@@ -17,7 +17,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
         try {
             await signOut(auth);
             console.log("Se cierra la sesión");
-            setIsLogged(false);
+            setIsLogged({logged: false, uid: ""});
             navigate("/");
         }
         catch (err) {
@@ -35,7 +35,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                     </Link>
                 </div>
 
-                {isLogged?
+                {isLogged.logged?
                 (<ul className="nav__ul">
                     <li className="nav__li">
                         <Link className="nav__link" to="/" >
@@ -43,14 +43,14 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                             <span className="nav__icon-text">Home</span>
                         </Link>
                     </li>
-                    <li className="nav__li">
-                        <Link className="nav__link" to="/" >
+                    <li className="nav__li" onClick={getPosition}>
+                        <span className="nav__link">
                             <Icon className="nav__icon" icon="tabler:map-pin" />
                             <span className="nav__icon-text">Mi ubicación</span>
-                        </Link>
+                        </span>
                     </li>
                     <li className="nav__li">
-                        <Link className="nav__link" to="/" >
+                        <Link className="nav__link" to="/favorites" >
                             <Icon className="nav__icon" icon="tabler:star" />
                             <span className="nav__icon-text">Favoritos v</span>
                         </Link>
@@ -63,7 +63,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                     </li>
                 </ul>)
                 :(
-                    <ul className="nav__ul">
+                <ul className="nav__ul">
                     <li className="nav__li" onClick={getPosition}>
                         <span className="nav__link">
                             <Icon className="nav__icon" icon="tabler:map-pin" />
