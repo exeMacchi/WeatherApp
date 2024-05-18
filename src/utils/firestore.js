@@ -1,4 +1,4 @@
-import { collection, doc, setDoc, getDocs, getDoc } from "firebase/firestore";
+import { collection, doc, setDoc, getDocs, getDoc, deleteDoc, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { db, auth } from "../services/firebase";
 
@@ -51,6 +51,27 @@ const addFavorite = (favorite_data) => {
     })
 }
 
+// Actualiza un favorito
+const updateFavorite = (uid, favId, tag) => {
+    try {
+        updateDoc(doc(usersCollection,uid,"favorites",favId), {
+            tag: tag
+          });
+          console.log('Se actualizo el favorito');
+    } catch (error) {
+        console.log("Error al actualizar:", error)
+    }
+}
+
+// Elimina un favorito
+const removeFavorite = async (uid, favId) => {
+    try {
+        await deleteDoc(doc(usersCollection,uid,"favorites",favId))
+    } catch (error) {
+        console.log("Error al eliminar:", error)
+    }
+}
+
 //Obtiene el listado de todos los favoritos
 const getAllFavorites = async (uid) => {
     const favorites = await getDocs(collection(db,'users',uid,'favorites'))
@@ -59,10 +80,12 @@ const getAllFavorites = async (uid) => {
     return listFav
 }
 
-export { 
+export  { 
     generateHash,
     getAllFavorites,
     existFavorite,
+    updateFavorite,
+    removeFavorite,
     initializeFavoritesByUser,
     addFavorite
 }
