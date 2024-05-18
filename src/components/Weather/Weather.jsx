@@ -1,10 +1,13 @@
+import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { organizeCurrentForecast, organizeDailyForecast, organizeWeekForecast } from "../../utils/weatherData";
 import Forecast from "./Forecast/Forecast";
 import Current from "./Current/Current";
 import Spinner from "./Spinner/Spinner";
 import './weather.css'
+import '../../styles/inputs.css'
+import { addFavorite } from "../../utils/firestore";
 
-const Weather = ({isLoading, show, weatherData}) => {
+const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
 
     if (isLoading === true) {
         return (
@@ -25,10 +28,38 @@ const Weather = ({isLoading, show, weatherData}) => {
         // Se actualiza el Forecast week
         const weekForecast = organizeWeekForecast(weatherData.forecast.forecastday);
 
+        // Handler para agregar un favorito
+        const handleAddFavorite = async () => {
+            const favorite_data = {
+                tag: weatherData.location.name,
+                location: currentForecast.locate,
+                lat: weatherData.location.lat,
+                lon: weatherData.location.lon,
+            }
+            await addFavorite(favorite_data)
+        }
+
+        // Si ya existe el favorito, se desactiva el botón de agregar
+        const favoriteButton = ()  =>{
+            if (isLogged.logged) {
+                return favorite ? (
+                    <div className="favorite-button-container">
+                        <button disabled className="btn--fav btn--fav-disabled"><Icon className="nav__icon" icon="tabler:star" /><span>Favorito</span></button>
+                    </div>
+                ):(
+                    <div className="favorite-button-container">
+                        <button onClick={handleAddFavorite} className="btn--fav"><Icon className="nav__icon" icon="tabler:star" /><span>Añadir</span></button>
+                    </div>
+                )
+            }
+        }
+
         return (
             <section className="weather-container" 
                      style={{ opacity: !show ? "0" : "1",
                               visibility: !show ? "hidden" : "visible",}}>
+
+                {favoriteButton()}
                 <Current weather={currentForecast}/>
                 <Forecast daily dailyForecast={dailyForecast}/>
                 <Forecast weekForecast={weekForecast}/>

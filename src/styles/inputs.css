@@ -1,0 +1,17 @@
+/* Buttons */
+.btn--fav{
+    border: none;
+    outline: none;
+    padding: var(--spacing-4) var(--spacing-8);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-18);
+    background: var(--bg-card);
+    border-radius: 4px;
+    color: var(--text-black-solid);
+    cursor: pointer;
+}
+
+.btn--fav-disabled{
+    background: red;
+}
