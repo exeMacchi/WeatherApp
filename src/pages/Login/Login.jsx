@@ -19,7 +19,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
             e.preventDefault();
             const userCredentials = await signInWithEmailAndPassword(auth, email, password);
             if (userCredentials) {
-                setIsLogged(true);
+                setIsLogged({logged: true, uid: userCredentials.user.uid});
                 navigate(`/favorites`)
             }
         }
@@ -27,7 +27,6 @@ const Login = ({ setBgClass, setIsLogged }) => {
             console.error(err);
             return;
         }
-
     }
 
     return(

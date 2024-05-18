@@ -24,7 +24,7 @@ const LandingPage = () => {
             <main className="container">
                 <Routes>
                     <Route path='/' element={<HomePage setBgClass={setBgClass}/>}/>
-                    <Route path="/weather" element={<WeatherPage setBgClass={setBgClass}/>}/>
+                    <Route path="/weather" element={<WeatherPage setBgClass={setBgClass} isLogged={isLogged}/>}/>
                     <Route path="/login" element={<Login setBgClass={setBgClass} setIsLogged={setIsLogged}/>}/>
                     <Route path="/register" element={<Register/>}/>
                     <Route path="/favorites" element={<Favorites isLogged={isLogged}/>}/>

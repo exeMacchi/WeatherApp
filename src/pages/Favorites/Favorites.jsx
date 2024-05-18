@@ -15,10 +15,6 @@ const Favorites = ({isLogged}) => {
         lon: "TEST_lon"
     }
 
-    const handleAddFavorite = async () => {
-        await addFavorite(variable_de_prueba)
-    }
-
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             getAllFavorites(user.uid).then((res) =>{
