@@ -1,5 +1,5 @@
 /* Buttons */
-.btn--fav{
+.btn--fav-add{
     border: none;
     outline: none;
     padding: var(--spacing-4) var(--spacing-8);
@@ -13,5 +13,31 @@
 }
 
 .btn--fav-disabled{
+    background: red;
+}
+
+.btn--fav-delete{
+
+}
+
+.btn--fav-edit{
+
+}
+
+.btn--fav{
+    border: none;
+    outline: none;
+    padding: var(--spacing-8) var(--spacing-8);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-18);
+    background: var(--bg-card);
+    border-radius: 50px;
+    font-size: 2.5rem;
+    color: var(--text-black-solid);
+    cursor: pointer;
+}
+
+.btn--fav:hover{
     background: red;
 }
