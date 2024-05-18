@@ -1,4 +1,4 @@
-import { collection, doc, setDoc, getDocs } from "firebase/firestore";
+import { collection, doc, setDoc, getDocs, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { db, auth } from "../services/firebase";
 
@@ -9,6 +9,13 @@ const generateHash = (str) => {
     let chars = str.split('')
     const hash = chars.reduce((h, c) => (h = c.charCodeAt(0) + (h << 6) + (h << 16) -h),0)
     return hash.toString()
+}
+
+// AUX: Devuelve true si el favorito existe
+const existFavorite = async (uid, location) => {
+    const locationHash = generateHash(location)
+    const res = await getDoc(doc(usersCollection,uid,"favorites",locationHash))
+    return (res.exists())
 }
 
 // Cuando se registra un usuario, crea su documento correspondiente para sus favoritos
@@ -52,20 +59,10 @@ const getAllFavorites = async (uid) => {
     return listFav
 }
 
-/* 
-
-res.docs.map ((doc) => (
-                {
-                    ...doc.data(),
-                    id:doc.id
-                }
-            ))
-
-*/
-
 export { 
     generateHash,
     getAllFavorites,
+    existFavorite,
     initializeFavoritesByUser,
     addFavorite
 }
