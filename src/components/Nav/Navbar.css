@@ -16,6 +16,7 @@
 
 .nav__logo-icon{
     font-size: 3.5rem;
+    color: var(--color-primary);
 }
 
 .nav__logo-text{
@@ -23,12 +24,26 @@
     letter-spacing: 2px;
 }
 
+/* Menu */
 .nav__ul{
+    margin: 0 var(--spacing-4);
     display: flex;
     justify-content: end;
     align-items: center;
     gap: var(--spacing-16);
 }
+
+.nav__li{
+    padding: var(--spacing-4) var(--spacing-8);
+    border-radius: var(--br-secondary);
+    transition: color var(--tr-03), background var(--tr-03), box-shadow var(--tr-03);
+}
+
+.nav__li:hover{
+    background: var(--color-secondary);
+    color: var(--text-white-hard);
+    box-shadow: var(--bs-secondary);
+    }
 
 .nav__link{
     display: flex;
@@ -37,29 +52,10 @@
     cursor: pointer;
 }
 
-.nav__link:visited{
-    color: var(--text-dark-solid);
-}
+    .nav__link:visited{
+        color: var(--text-dark-solid);
+    }
 
 .nav__icon{
     font-size: 2rem;
 }
-
-
-.nav__logout {
-    border: none;
-    border: 1px solid var(--text-white-hard);
-    color: var(--text-white-hard);
-    background-color: transparent;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-8);
-    padding: var(--spacing-8);
-    transition: background-color 0.5s ease;
-    cursor: pointer;
-}
-
-    .nav__logout:hover {
-        background-color: burlywood;
-    }
