@@ -1,0 +1,32 @@
+.about{
+    height: 100%;
+    font-size: 1.5rem;
+
+}
+
+.article{
+    margin-bottom: var(--spacing-40);
+}
+
+.article:last-child{
+    margin-bottom: 0;
+}
+.article__title{
+    margin-bottom: var(--spacing-8);
+}
+
+.dot{
+    font-weight: 900;
+    margin-left: 2rem;
+}
+
+.article__link--repo{
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    font-weight: var(--semibold);
+    transition: color var(--tr-03);
+}
+
+.article__link--repo:hover{
+    color: var(--color-secondary);
+}
