@@ -70,7 +70,7 @@
 }
 
 .current-detail__icon{
-    color: var(--text-black-medium);
+    color: var(--color-primary);
     font-size: 2.7rem;
 }
 
