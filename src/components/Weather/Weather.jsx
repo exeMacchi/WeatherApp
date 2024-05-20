@@ -6,13 +6,18 @@ import Spinner from "./Spinner/Spinner";
 import './weather.css'
 import '../../styles/inputs.css'
 import { addFavorite } from "../../utils/firestore";
+import { Fade } from "react-awesome-reveal"
 
 const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
 
     if (isLoading === true) {
         return (
             <section className="weather-container">
-                <Spinner/>
+                <Fade cascade={true}
+                      triggerOnce={true}
+                      damping={0.5}>
+                    <Spinner/>
+                </Fade>
             </section>
         )
     }
@@ -55,15 +60,17 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
         }
 
         return (
-            <section className="weather-container" 
-                     style={{ opacity: !show ? "0" : "1",
-                              visibility: !show ? "hidden" : "visible",}}>
-
-                {favoriteButton()}
-                <Current weather={currentForecast}/>
-                <Forecast daily dailyForecast={dailyForecast}/>
-                <Forecast weekForecast={weekForecast}/>
-            </section>
+            <Fade cascade={true}
+                      triggerOnce={true}
+                      damping={0.5}>
+                            
+                <section className="weather-container">
+                    {favoriteButton()}
+                    <Current weather={currentForecast}/>
+                    <Forecast daily dailyForecast={dailyForecast}/>
+                    <Forecast weekForecast={weekForecast}/>
+                </section>
+            </Fade>
         );
     }
     else {
