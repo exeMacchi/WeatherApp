@@ -34,35 +34,6 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                         <span className="nav__logo-text">WeatherAPP</span>
                     </Link>
                 </div>
-
-                {isLogged.logged?
-                (<ul className="nav__ul">
-                    <li className="nav__li">
-                        <Link className="nav__link" to="/" >
-                            <Icon className="nav__icon" icon="tabler:home" />
-                            <span className="nav__icon-text">Home</span>
-                        </Link>
-                    </li>
-                    <li className="nav__li" onClick={getPosition}>
-                        <span className="nav__link">
-                            <Icon className="nav__icon" icon="tabler:map-pin" />
-                            <span className="nav__icon-text">Mi ubicación</span>
-                        </span>
-                    </li>
-                    <li className="nav__li">
-                        <Link className="nav__link" to="/favorites" >
-                            <Icon className="nav__icon" icon="tabler:star" />
-                            <span className="nav__icon-text">Favoritos v</span>
-                        </Link>
-                    </li>
-                    <li className="nav__li">
-                        <button type="button" className="nav__logout" onClick={handleLogout}>
-                            <Icon className="nav__icon" icon="tabler:logout" />
-                            <span className="nav__icon-text">Salir</span>
-                        </button>
-                    </li>
-                </ul>)
-                :(
                 <ul className="nav__ul">
                     <li className="nav__li" onClick={getPosition}>
                         <span className="nav__link">
@@ -71,15 +42,41 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                         </span>
                     </li>
                     <li className="nav__li">
-                        <Link className="nav__link" to="/login" >
-                            <Icon className="nav__icon" icon="tabler:user-circle" />
-                            <span className="nav__icon-text">Iniciar sesión</span>
+                        <Link className="nav__link" to="/about" >
+                            <span className="nav__link">
+                                <Icon className="nav__icon" icon="tabler:code" />
+                                <span className="nav__icon-text">Sobre Nosotros</span>
+                            </span>
                         </Link>
                     </li>
-                </ul>
-                )}
 
-                
+                    {isLogged.logged? (
+                        <>
+                        <li className="nav__li">
+                        <Link className="nav__link" to="/favorites" >
+                            <Icon className="nav__icon" icon="tabler:star" />
+                            <span className="nav__icon-text">Favoritos</span>
+                        </Link>
+                        </li>
+                        <li className="nav__li">
+                            <span type="button" className="nav__link" onClick={handleLogout}>
+                                <Icon className="nav__icon" icon="tabler:logout" />
+                                <span className="nav__icon-text">Salir</span>
+                            </span>
+                        </li>
+                        </>
+                    ):(
+                        <>
+                        <li className="nav__li">
+                            <Link className="nav__link" to="/login" >
+                                <Icon className="nav__icon" icon="tabler:user-circle" />
+                                <span className="nav__icon-text">Iniciar sesión</span>
+                            </Link>
+                        </li>
+                        </>
+                    )}
+                </ul>
+
             </nav>
     )
 }
