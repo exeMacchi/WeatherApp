@@ -20,7 +20,6 @@ const WeatherPage = ({ setBgClass, isLogged }) => {
         try {
             setLoading(true)
             const weatherDataAPI = await getWeatherData(lat, lon)
-            console.log(isLogged)
             if (isLogged.logged) {setFavorite(await existFavorite(isLogged.uid, `${weatherDataAPI.location.name}, ${weatherDataAPI.location.region}, ${weatherDataAPI.location.country}`))}
             setWeatherData(weatherDataAPI);
             setBgClass(getClass(weatherDataAPI));
@@ -28,7 +27,6 @@ const WeatherPage = ({ setBgClass, isLogged }) => {
             setShow(true);
         }
         catch (err) {
-            console.error(err);
             setLoading(false)
             setShow(false)
         }
