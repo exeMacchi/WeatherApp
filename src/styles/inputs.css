@@ -30,11 +30,11 @@
     transition: border var(--tr-03), outline var(--tr-03), color var(--tr-03);
 }
 
-.input:hover{
-    border-color:var(--color-primary);
-    outline-color: var(--color-primary);
-    color: var(--text-black-solid);
-}
+    .input:hover{
+        border-color:var(--color-primary);
+        outline-color: var(--color-primary);
+        color: var(--text-black-solid);
+    }
 
 /* Buttons */
 .btn{
@@ -93,4 +93,30 @@
 .link:hover{
     color: var(--color-secondary);
     text-decoration: underline;
+}
+
+/* Modificadores SweetAlert */
+.btn--swal{
+    margin: 0 var(--spacing-24);
+    padding: var(--spacing-8) var(--spacing-16);
+    background: var(--color-primary);
+    font-size: 1.3rem;
+    border-radius: 4px;
+    font-weight: var(--regular);
+    opacity: .7;
+}
+
+.btn--swal--cancel{
+    background: #a3a3a3;
+}
+
+.input--swal{
+    width: auto;
+    outline: none;
+}
+
+.input--swal:focus{
+    border-color:var(--color-primary);
+    outline-color: var(--color-primary);
+    color: var(--text-black-solid);
 }
