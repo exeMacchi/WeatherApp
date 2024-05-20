@@ -3,8 +3,8 @@
     --bg: #f8f7fa;
     --bg-card: #FFF;
 
-    --color-secondary: #b94cdb;
-    --color-primary: #fe815e;
+    --color-secondary: #6d58d4;
+    --color-primary: #20bdff;
 
     /* Degradados */
     --dg-ultralightblue: linear-gradient(to bottom, #e0eafc, #c7edff);
@@ -17,7 +17,8 @@
     /* --dg-default: linear-gradient(30deg, #faa499 0%, #fedc6d 50%, #faa499 100%); */
     
 
-    --dg-primary: linear-gradient(54deg,#b94cdb,#fe815e);
+    /* --dg-primary: linear-gradient(54deg,#b94cdb,#fe815e); */
+    --dg-primary: linear-gradient(to right, #5433ff, #20bdff);
 
     --text-black-hard: #2c2f35;
     --text-black-solid: #474e59;
