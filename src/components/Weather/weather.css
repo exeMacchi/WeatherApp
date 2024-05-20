@@ -13,3 +13,33 @@
     justify-content: end;
     margin-top: var(--spacing-16);
 }
+
+/* Button para añadir a favoritos */
+.btn--fav{
+    padding: var(--spacing-8) var(--spacing-12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-8);
+    background: #dfaa3a;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #fff0d1;
+    transition: background var(--tr-03), color var(--tr-03);
+}
+
+.btn--fav span{
+    font-size: 1.5rem;
+}
+
+    .btn--fav:hover{
+        background: #ffc343;
+    }
+
+.btn--fav-disabled{
+    background: #ffc343;
+    opacity: 1;
+    cursor: default;
+}

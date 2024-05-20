@@ -44,11 +44,11 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
             if (isLogged.logged) {
                 return favorite ? (
                     <div className="favorite-button-container">
-                        <button disabled className="btn--fav btn--fav-disabled"><Icon className="nav__icon" icon="tabler:star" /><span>Favorito</span></button>
+                        <button disabled className="btn--fav btn--fav-disabled"><Icon icon="tabler:star-filled" /></button>
                     </div>
                 ):(
                     <div className="favorite-button-container">
-                        <button onClick={handleAddFavorite} className="btn--fav"><Icon className="nav__icon" icon="tabler:star" /><span>Añadir</span></button>
+                        <button onClick={handleAddFavorite} className="btn--fav"><Icon icon="tabler:star" /><span>Agregar</span></button>
                     </div>
                 )
             }

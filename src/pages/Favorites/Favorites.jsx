@@ -102,31 +102,34 @@ const Favorites = ({isLogged}) => {
     if (isLogged) {
         return(
             <div className="card">
-                <h1 className='card-title'>Favoritos</h1>
-                <span>Aqui se listan los favoritos que has creado</span>
-                <ul className='fav__ul'>
-                    {favorites.map( (fav) => (
-                        <Fade cascade={true}
-                        triggerOnce={true}
-                        damping={0.5}>
-
-                        <li key={fav.id} className='fav__li'>
-                            <div className='fav__text-container'>
-                                <p className='fav__tag'>{fav.tag}</p>
-                                <p className='fav__location'>{fav.location}</p>
-                                <div className='fav__data'>
-                                    <p>Latitud: <span>{fav.lat}</span> - Longitud: <span>{fav.lon}</span></p> 
+                <div className="card__header">
+                    <h1 className='card__title'>Favoritos</h1>
+                    <span className='card__subtitle'>Aqui se listan tus ciudades favoritas</span>
+                </div>
+                <div className="card__body">
+                    <ul className='fav__ul'>
+                        {favorites.map( (fav) => (
+                            <li key={fav.id} className='fav__li'>
+                            <Fade cascade={true}
+                            triggerOnce={true}
+                            damping={0.5}>
+                                <div className='fav__text-container'>
+                                    <p className='fav__tag text-dg-primary'>{fav.tag}</p>
+                                    <p className='fav__location'>{fav.location}</p>
+                                    <div className='fav__data'>
+                                        <p>Latitud: <span>{fav.lat}</span> - Longitud: <span>{fav.lon}</span></p> 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='li__buttons-container'>
-                                <button className='btn--fav' onClick={() => (handleCurrentLocation(fav.lat, fav.lon))}><Icon icon="tabler:map-pin" /></button>
-                                <button className='btn--fav' onClick={() => (handleUpdate(fav.id))}><Icon icon="tabler:edit" /></button>
-                                <button className='btn--fav' onClick={() => (handleDelete(fav.id))}><Icon icon="tabler:trash" /></button>
-                            </div>
-                        </li>
-                        </Fade>
-                    ) )}
-                </ul>
+                                <div className='li__buttons-container'>
+                                    <button className='btn-rounded' onClick={() => (handleCurrentLocation(fav.lat, fav.lon))}><Icon icon="tabler:map-pin" /></button>
+                                    <button className='btn-rounded' onClick={() => (handleUpdate(fav.id))}><Icon icon="tabler:edit" /></button>
+                                    <button className='btn-rounded' onClick={() => (handleDelete(fav.id))}><Icon icon="tabler:trash" /></button>
+                                </div>
+                            </Fade>
+                            </li>
+                        ) )}
+                    </ul>
+                </div>
             </div>
         )
     }else{

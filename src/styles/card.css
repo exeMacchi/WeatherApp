@@ -7,8 +7,23 @@
     box-shadow: var(--bs-primary);
 }
 
-.card__title{
+.card__header{
     margin-bottom: var(--spacing-24);
-    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__body{
+}
+
+.card__title{
+    font-size: 2.5rem;
+    color: var(--text-black-solid);
+}
+
+.card__subtitle{
+    font-size: 1.2rem;
+    font-weight: 500;
     color: var(--text-black-medium);
 }

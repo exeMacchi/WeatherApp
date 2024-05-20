@@ -22,40 +22,43 @@ const Register = () => {
     }
 
     return(
-<section className="login__container card">
-                <h1 className="login__title">Registro</h1>
+        <section className="card card--login">
+                <section className="card__header">
+                    <h2 className="card__title">Registrar</h2>
+                    <span className="card__subtitle">Registrar una cuenta en WeatherAPP para guardar sus favoritos</span>
+                </section>
 
-                <form onSubmit={handleOnSubmit} className="login__form-container">
-                    <div className="login__email-container">
-                        <label htmlFor="login-email"
-                               className="login__email-label">
-                            Correo electrónico
-                        </label>
-                        <input id="email"
-                               name="email"
-                               className="login__input"
-                               type="email"
-                               placeholder="usuario@mail.com"
-                               />
-                    </div>
+                <section className="card__body">
+                    <form onSubmit={handleOnSubmit} className="">
+                        <div className="inputs__container">
+                            <label htmlFor="label"
+                                className="label">
+                                Correo electrónico
+                            </label>
+                            <input id="login-email"
+                                name="user-email"
+                                className="input input--text"
+                                type="email"
+                                placeholder="usuario@mail.com"/>
+                        </div>
 
-                    <div className="login__pass-container">
-                        <label htmlFor="login-pass"
-                               className="login__email-label">
-                            Contraseña:
-                        </label>
-                        <input id="pass"
-                               name="pass"
-                               className="login__input"
-                               type="password"
-                               placeholder="••••••"
-                               />
-                    </div>
+                        <div className="inputs__container">
+                            <label htmlFor="login-pass"
+                                className="label">
+                                Contraseña:
+                            </label>
+                            <input id="login-pass"
+                                name="user-pass"
+                                className="input input--text"
+                                type="password"
+                                placeholder="••••••"/>
+                        </div>
 
-
-                    <button type="submit"
-                            className="login__submit">Ingresar</button>
-                </form>
+                        <div className="inputs__container">
+                            <button type="submit" className="btn btn--login">Registrarse</button>
+                        </div>
+                    </form>
+                </section>
             </section>
     )
 }
