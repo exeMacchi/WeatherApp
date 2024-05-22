@@ -13,6 +13,7 @@ import Register from "./Register/Register";
 import Favorites from "./Favorites/Favorites";
 import Footer from "../components/Footer/Footer";
 import About from "./About/About";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 const LandingPage = () => {
     const [ bgClass, setBgClass ] = useState("default"); // Controlar el background
@@ -27,10 +28,11 @@ const LandingPage = () => {
                 <Routes>
                     <Route path='/' element={<HomePage setBgClass={setBgClass}/>}/>
                     <Route path="/weather" element={<WeatherPage setBgClass={setBgClass} isLogged={isLogged}/>}/>
-                    <Route path="/login" element={<Login setBgClass={setBgClass} setIsLogged={setIsLogged}/>}/>
-                    <Route path="/register" element={<Register/>}/>
                     <Route path="/favorites" element={<Favorites setBgClass={setBgClass} isLogged={isLogged}/>}/>
                     <Route path="/about" element={<About setBgClass={setBgClass}/>}/>
+                    <Route path="/login" element={<Login setBgClass={setBgClass} setIsLogged={setIsLogged}/>}/>
+                    <Route path="/register" element={<Register setIsLogged={setIsLogged}/>}/>
+                    <Route path="/forgot-password" element={<ForgotPassword/>}/>
                 </Routes>
             </main>
             <Footer/>

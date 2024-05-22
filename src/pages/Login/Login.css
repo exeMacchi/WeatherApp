@@ -1,7 +1,5 @@
 .card--login{
     max-width: 600px;
-    margin: 0 auto;
-    margin-top: var(--spacing-120);
 }
 
 .btn--login{

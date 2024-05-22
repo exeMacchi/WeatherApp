@@ -7,7 +7,7 @@ const API_KEY = '820ab2966c224b35ad7212216240805'
  * @returns 
  */
 const getWeatherData = async (lat,lon) => {
-    const res = await fetch(`${BASE_URL}?key=${API_KEY}&q=${lat},${lon}&days=16&aqi=no&alerts=no`);
+    const res = await fetch(`${BASE_URL}?key=${API_KEY}&q=${lat},${lon}&days=16&aqi=no&alerts=no&lang=es&units=si`);
     return await res.json();
 }
 

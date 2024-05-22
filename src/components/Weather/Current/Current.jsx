@@ -14,7 +14,10 @@ const Current = ({weather}) => {
             </section>
 
             <section className="current-temp">
-                <img className="current__icon" src={`/img/icons/${weather.icon}.png`} alt={`${weather.icon}`} />
+                <div className="current__icon-container">
+                    <img className="current__icon" src={`/img/icons/${weather.icon}.png`} alt={`${weather.icon}`} />
+                    <span>{weather.condition}</span>
+                </div>
                 <span className="current__temp">{weather.actualTemperature}</span>
             </section>
 

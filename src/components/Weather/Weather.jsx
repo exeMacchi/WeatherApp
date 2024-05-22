@@ -1,25 +1,35 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
-import { organizeCurrentForecast, organizeDailyForecast, organizeWeekForecast } from "../../utils/weatherData";
+import { organizeCurrentForecast, organizeDailyForecast, organizeWeekForecast, organizeCurrentDetails } from "../../utils/weatherData";
 import Forecast from "./Forecast/Forecast";
 import Current from "./Current/Current";
+import Detail from "./Detail/Detail";
 import Spinner from "./Spinner/Spinner";
 import './weather.css'
 import '../../styles/inputs.css'
 import { addFavorite } from "../../utils/firestore";
+import { Fade } from "react-awesome-reveal"
 
 const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
 
     if (isLoading === true) {
         return (
             <section className="weather-container">
-                <Spinner/>
+                <Fade cascade={true}
+                      triggerOnce={true}
+                      damping={0.5}>
+                    <Spinner/>
+                </Fade>
             </section>
         )
     }
 
     if (show) {
+        console.log(weatherData)
         // Se actualiza el Current
         const currentForecast = organizeCurrentForecast(weatherData);
+
+        // Se actualiza el Detail
+        const currentDetails = organizeCurrentDetails(weatherData);
 
         // Se actualiza el Forecast daily
         const dailyForecast = organizeDailyForecast(weatherData.forecast.forecastday, 
@@ -55,15 +65,18 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
         }
 
         return (
-            <section className="weather-container" 
-                     style={{ opacity: !show ? "0" : "1",
-                              visibility: !show ? "hidden" : "visible",}}>
-
-                {favoriteButton()}
-                <Current weather={currentForecast}/>
-                <Forecast daily dailyForecast={dailyForecast}/>
-                <Forecast weekForecast={weekForecast}/>
-            </section>
+            <Fade cascade={true}
+                      triggerOnce={true}
+                      damping={0.5}>
+                            
+                <section className="weather-container">
+                    {favoriteButton()}
+                    <Current weather={currentForecast}/>
+                    <Forecast daily dailyForecast={dailyForecast}/>
+                    <Forecast weekForecast={weekForecast}/>
+                    <Detail detail={currentDetails}/>
+                </section>
+            </Fade>
         );
     }
     else {

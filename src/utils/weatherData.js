@@ -18,8 +18,24 @@ const organizeCurrentForecast = (weatherData) => {
     const thermalSensation = `${weatherData.current.feelslike_c}°`;
     const humidity = `${weatherData.current.humidity}%`;
     const wind = `${weatherData.current.wind_kph} km/h`;
+    const condition = weatherData.current.condition.text;
 
-    return { date, localHour, locate, icon, actualTemperature, thermalSensation, humidity, wind }
+    return { date, localHour, locate, icon, actualTemperature, thermalSensation, humidity, wind, condition }
+}
+
+const organizeCurrentDetails = (weatherData) => {
+    return {
+        feelslike: weatherData.current.feelslike_c,
+        uv: weatherData.current.uv,
+        cloud: weatherData.current.cloud,
+        humidity: weatherData.current.humidity,
+        pressure_mb: weatherData.current.pressure_mb,
+        visibility_km: weatherData.current.vis_km,
+        precip_mm: weatherData.current.precip_mm,
+        wind_kph: weatherData.current.wind_kph,
+        wind_deg: weatherData.current.wind_degree,
+        wind_dir: weatherData.current.wind_dir,
+    }
 }
 
 /**
@@ -85,6 +101,7 @@ const organizeWeekForecast = (forecast) => {
 
 export { 
     organizeCurrentForecast, 
+    organizeCurrentDetails,
     organizeDailyForecast, 
     organizeWeekForecast
 };
