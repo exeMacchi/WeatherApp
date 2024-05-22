@@ -39,9 +39,24 @@
     gap: var(--spacing-32);
 }
 
+.current__icon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-8);
+    font-size: 1.7rem;
+    font-weight: var(--regular);
+    
+    text-wrap: wrap;
+}
+
 .current__icon{
-    max-width: 170px;
+    max-width: 140px;
     filter: drop-shadow(0px 0px 12px rgba(0,0,0,0.15));
+}
+
+.current__icon-container span{
+    
 }
 
 .current__icon--forecast{
