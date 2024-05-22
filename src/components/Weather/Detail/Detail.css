@@ -1,0 +1,28 @@
+.detail-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-16);
+}
+
+.detail__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-24);
+}
+
+.detail__icon-container {
+    display: flex;
+    align-items: center;
+    font-size: 3.5rem;
+    color: var(--color-primary);
+}
+
+.detail__content {
+    font-size: 1.5rem;
+}
+
+.detail__title {
+    color: var(--text-black-solid);
+    font-weight: var(--semibold);
+}
