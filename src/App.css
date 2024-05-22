@@ -16,6 +16,13 @@
     flex-grow: 1;
 }
 
+.sub-container{
+    min-height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center ;
+}
+
 
 /* Clases globales */
 

@@ -58,6 +58,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
     }
 
     return(
+        <div className="sub-container">
             <section className="card card--login">
                 <section className="card__header">
                     <h2 className="card__title">Ingresar a su cuenta</h2>
@@ -110,6 +111,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
                     </form>
                 </section>
             </section>
+        </div>
     )
 }
 
