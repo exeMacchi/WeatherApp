@@ -16,7 +16,7 @@ Dentro de esta aplicación podremos consultar el clima en tiempo real de cualqui
 
 ## Tecnologías
 
-| ![Captura 5](/public/img/capturas/screen-5.png) |
+![Captura 5](/public/img/capturas/screen-5.png)
 
 ## APIs
 
