@@ -40,6 +40,11 @@ const Presentation = () => {
                 <Fade cascade={true}
                       triggerOnce={true}
                       damping={0.5}>
+                    <figure className="daily-forecast__image-container">
+                        <img src="/img/home/Forecast-Daily.png"
+                            alt="test"
+                            className="daily-forecast__image"/>
+                    </figure>
                     <div className="daily-forecast__description-container">
                         <h2 className="daily-forecast__title">Pronóstico diario</h2>
                         <p className="daily-forecast__text">
@@ -50,11 +55,6 @@ const Presentation = () => {
                             decisiones informadas sobre sus actividades.
                         </p>
                     </div>
-                    <figure className="daily-forecast__image-container">
-                        <img src="/img/home/Forecast-Daily.png"
-                            alt="test"
-                            className="daily-forecast__image"/>
-                    </figure>
                 </Fade>
             </section>
 
@@ -63,6 +63,11 @@ const Presentation = () => {
                       damping={0.5}
                       triggerOnce={true}
                       style={{display: "flex", justifyContent: "flex-end"}}>
+                    <figure className="week-forecast__image-container">
+                        <img src="/img/home/Forecast-Week.png"
+                            alt="test"
+                            className="week-forecast__image"/>
+                    </figure>
                     <div className="week-forecast__description-container">
                         <h2 className="week-forecast__title">Pronóstico semanal</h2>
                         <p className="week-forecast__text">
@@ -73,11 +78,6 @@ const Presentation = () => {
                             planificar con anticipación.
                         </p>
                     </div>
-                    <figure className="week-forecast__image-container">
-                        <img src="/img/home/Forecast-Week.png"
-                            alt="test"
-                            className="week-forecast__image"/>
-                    </figure>
                 </Fade>
             </section>
         </>
