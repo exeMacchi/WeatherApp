@@ -8,8 +8,19 @@ import './weather.css'
 import '../../styles/inputs.css'
 import { addFavorite } from "../../utils/firestore";
 import { Fade } from "react-awesome-reveal"
+import { useEffect, useState } from "react";
 
 const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
+
+    const [ isFavorite, setIsFavorite ] = useState(null);
+
+    useEffect(() => {
+        if (isLogged.logged) {
+            setTimeout(() => {
+                setIsFavorite(favorite)
+            }, 100);
+        }
+    }, [favorite])
 
     if (isLoading === true) {
         return (
@@ -24,7 +35,6 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
     }
 
     if (show) {
-        console.log(weatherData)
         // Se actualiza el Current
         const currentForecast = organizeCurrentForecast(weatherData);
 
@@ -40,6 +50,7 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
 
         // Handler para agregar un favorito
         const handleAddFavorite = async () => {
+            setIsFavorite(true)
             const favorite_data = {
                 tag: weatherData.location.name,
                 location: currentForecast.locate,
@@ -52,7 +63,7 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
         // Si ya existe el favorito, se desactiva el botón de agregar
         const favoriteButton = ()  =>{
             if (isLogged.logged) {
-                return favorite ? (
+                return isFavorite ? (
                     <div className="favorite-button-container">
                         <button disabled className="btn--fav btn--fav-disabled"><Icon icon="tabler:star-filled" /></button>
                     </div>
@@ -68,7 +79,6 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
             <Fade cascade={true}
                       triggerOnce={true}
                       damping={0.5}>
-                            
                 <section className="weather-container">
                     {favoriteButton()}
                     <Current weather={currentForecast}/>
