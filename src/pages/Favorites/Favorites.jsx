@@ -11,13 +11,17 @@ import {
 import { auth } from "../../services/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import "./Favorites.css";
+import Spinner from "../../components/Weather/Spinner/Spinner";
 
 const Favorites = ({ setBgClass, isLogged }) => {
     const navigate = useNavigate();
     const [favorites, setFavorites] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setBgClass("default");
+
+        updaterList();
     }, [])
 
     const handleCurrentLocation = (lat, lon) => {
@@ -172,17 +176,17 @@ const Favorites = ({ setBgClass, isLogged }) => {
     };
 
     // Actualiza la lista de favoritos
-    const updaterList = async () => {
+    const updaterList = () => {
+        setIsLoading(true)
         onAuthStateChanged(auth, (user) => {
-            getAllFavorites(user.uid).then((res) => {
-                setFavorites(res);
-            });
+            setTimeout(() => {
+                getAllFavorites(user.uid).then((res) => {
+                    setFavorites(res);
+                    setIsLoading(false)
+                });
+            }, 1500);
         });
     };
-
-    useEffect(() => {
-        updaterList();
-    }, [favorites]);
 
     if (isLogged) {
         return (
@@ -193,7 +197,9 @@ const Favorites = ({ setBgClass, isLogged }) => {
                         Aqui se listan tus ciudades favoritas
                     </span>
                 </div>
-                <div className="card__body">
+                <div className="card__body card__body--favorites">
+                    {isLoading? <Spinner /> 
+                    :
                     <ul className="fav__ul">
                         {favorites.map((fav) => (
                             <li key={fav.id} className="fav__li">
@@ -213,19 +219,19 @@ const Favorites = ({ setBgClass, isLogged }) => {
                                         <button
                                             className="btn-rounded"
                                             onClick={() => handleCurrentLocation(fav.lat, fav.lon)}
-                                        >
+                                            >
                                             <Icon icon="tabler:map-pin" />
                                         </button>
                                         <button
                                             className="btn-rounded"
                                             onClick={() => handleUpdate(fav.id, fav.tag)}
-                                        >
+                                            >
                                             <Icon icon="tabler:edit" />
                                         </button>
                                         <button
                                             className="btn-rounded"
                                             onClick={() => handleDelete(fav.id, fav.tag)}
-                                        >
+                                            >
                                             <Icon icon="tabler:trash" />
                                         </button>
                                     </div>
@@ -233,6 +239,7 @@ const Favorites = ({ setBgClass, isLogged }) => {
                             </li>
                         ))}
                     </ul>
+            }
                 </div>
             </div>
         );
