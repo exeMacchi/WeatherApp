@@ -41,3 +41,10 @@
     opacity: 1;
     cursor: default;
 }
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .favorite-button-container{
+        margin-top: var(--spacing-16);
+    }
+}

@@ -26,3 +26,13 @@
     color: var(--text-black-solid);
     font-weight: var(--semibold);
 }
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .detail-container {
+        margin-top: var(--spacing-16);
+        grid-template-columns: 1fr;
+        gap: var(--spacing-24);
+
+    }
+}

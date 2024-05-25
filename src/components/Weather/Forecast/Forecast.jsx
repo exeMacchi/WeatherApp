@@ -11,6 +11,14 @@ const Forecast = ({ daily, dailyForecast, weekForecast, isLogged }) => {
         dots: false,
         infinite: false,
         slidesToShow: daily ? 7 : 5,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 3,
+                swipeToSlide: true
+              }
+            },]
     }
 
     return (

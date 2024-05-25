@@ -95,3 +95,34 @@
     font-weight: var(--semibold);
     letter-spacing: 1.5px;
 }
+
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .current-container{
+        margin-bottom: var(--spacing-32);
+        gap: var(--spacing-16);
+    }
+
+    .current__local-date{
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+
+        margin-bottom: var(--spacing-8);
+    }
+
+    .current__location{
+        font-size: 2rem;
+    }
+
+    .current-temp{
+        flex-direction: column;
+        gap: var(--spacing-12);
+        font-size: 8rem;
+    }
+
+    .current__temp{
+        font-size: 6rem;
+    }
+
+}/* FIN MobileResponsive */

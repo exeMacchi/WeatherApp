@@ -59,3 +59,102 @@
 .nav__icon{
     font-size: 2rem;
 }
+
+
+li, .bars {
+  list-style: none;
+}
+
+/* Media Query 768 */
+
+@media (max-width:768px){
+   
+  .container{
+    padding: 0;
+  }
+ 
+  .bars {
+    background: rgb(73, 73, 73);
+    display: block;
+  }
+ 
+  .desplegable{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-100%);
+    transition: 0.5s;
+    /* font-size: 1.1rem; */
+    width: 50%;  /*tablet*/
+    background: rgb(73, 73, 73);
+    z-index: 1000;
+  }
+
+  .nav__logo{
+    margin: 5px;
+  }
+
+  .nav__ul {
+    padding: 0;
+    margin: 5px;
+    /* width: 100%; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin: 10px;
+    border: none;
+  }
+
+  .nav__logo-text, .nav__icon-text {
+    font-size: small;
+  }
+
+  .menu_button {
+    background-image: url('../../../public/img/icons/icon-menu.svg');
+    background-color: rgb(73, 73, 73);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-size: 30px;
+    background-position: center;
+    /* en publi/img/icons se agrega en imagen svg icon-menu fill="color elegido" en este caso azure */
+    
+  }
+ 
+  /* Abrir & Cerrar menú */
+
+  .open_menu {
+    transform: translate(0%);
+    transition: 0.5s;
+    width: 50%;
+    background: rgba(218, 229, 240, 0.993);
+    backdrop-filter: 3px;
+  }
+
+  /* Cambia 3 líneas por X  */
+
+  .place_x {
+    background-image: url('../../../public/img/icons/icon-cross.svg');
+    background-color: rgb(73, 73, 73);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-size: 30px;
+    background-position: center;
+    /* en publi/img/icons se agrega en imagen svg icon-menu fill="color elegido" en este caso azure un poco más oscuro*/
+  }
+ 
+}
+
+/* Media Query 480 */
+
+@media(max-width: 480px){
+
+  .desplegable {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+}
