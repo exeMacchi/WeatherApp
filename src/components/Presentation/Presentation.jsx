@@ -15,7 +15,7 @@ const Presentation = () => {
                 </Fade>
 
                 <div className="hero__description-container">
-                    <Fade cascade triggerOnce delay={500} damping={0.5}>
+                    <Fade cascade triggerOnce delay={.5} damping={0.5}>
                         <figure className="hero__image-container">
                             <img src="/img/home/Sunny.webp"
                                  alt="test"
@@ -36,7 +36,6 @@ const Presentation = () => {
                                  alt="test"
                                  className="hero__image"/>
                         </figure>
-
                         <div className="hero__description">
                             <h2 className="hero__description__title">Clima en tiempo real</h2>
                             <p className="hero__description__text">
@@ -49,11 +48,13 @@ const Presentation = () => {
                 </div>
             </section>
 
-            <section className="week-forecast__container">
+            <div className="functionalities__container">
+            {/* WEEK */}
+            <section className="functionality__container">
                 <Fade cascade triggerOnce damping={0.5} fraction={.5}>
-                    <div className="week-forecast__bubble">
-                        <h2 className="week-forecast__title">Pronóstico semanal</h2>
-                        <p className="week-forecast__text">
+                    <div className="functionality__bubble">
+                        <h2 className="functionality__title">Pronóstico semanal</h2>
+                        <p className="functionality__text">
                             Manténgase informado sobre el clima de la semana con 
                             nuestro pronóstico extendido.
                             Obtenga una vista general del clima que se espera en su 
@@ -61,22 +62,23 @@ const Presentation = () => {
                             planificar con anticipación.
                         </p>
                     </div>
-                    <div className="week-forecast__image--flex">
-                        <figure className="week-forecast__image-container">
+                    <div className="functionality__image--flex">
+                        <figure className="functionality__image-container">
                             <img src="/img/home/WeekForecast.webp"
                                 alt="test"
-                                className="week-forecast__image"/>
+                                className="functionality__image"/>
                         </figure>
                     </div>
                 </Fade>
             </section>
 
 
-            <section className="daily-forecast__container">
+            {/* DAILY */}
+            <section className="functionality__container">
                 <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
-                    <div className="daily-forecast__bubble">
-                        <h2 className="daily-forecast__title">Pronóstico diario</h2>
-                        <p className="daily-forecast__text">
+                    <div className="functionality__bubble">
+                        <h2 className="functionality__title">Pronóstico diario</h2>
+                        <p className="functionality__text">
                             Planifique su día con confianza con nuestro pronóstico 
                             detallado hora por hora.
                             Conozca las condiciones meteorológicas que se esperan 
@@ -88,21 +90,22 @@ const Presentation = () => {
                             Funcionalidad de usuario
                         </span>
                     </div>
-                    <div className="daily-forecast__image--flex">
-                        <figure className="daily-forecast__image-container">
+                    <div className="functionality__image--flex">
+                        <figure className="functionality__image-container">
                             <img src="/img/home/DailyForecast.webp"
                                 alt="test"
-                                className="daily-forecast__image"/>
+                                className="functionality__image"/>
                         </figure>
                     </div>
                 </Fade>
             </section>
 
-            <section className="forecast-detail__container">
+            {/* DETAIL */}
+            <section className="functionality__container">
                 <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
-                <div className="forecast-detail__bubble">
-                    <h2 className="forecast-detail__title">Pronóstico detallado</h2>
-                    <p className="forecast-detail__text">
+                <div className="functionality__bubble">
+                    <h2 className="functionality__title">Pronóstico detallado</h2>
+                    <p className="functionality__text">
                         Obtenga información precisa y completa sobre el clima, 
                         incluyendo sensación térmica, humedad, velocidad del viento,
                         presión atmosférica y mucho más.
@@ -112,15 +115,40 @@ const Presentation = () => {
                         Funcionalidad de usuario
                     </span>
                 </div>
-                <div className="forecast-detail__image--flex">
-                    <figure className="forecast-detail__image-container">
+                <div className="functionality__image--flex">
+                    <figure className="functionality__image-container">
                         <img src="/img/home/ForecastDetail.webp"
                             alt="test"
-                            className="forecast-detail__image"/>
+                            className="functionality__image"/>
                     </figure>
                 </div>
                 </Fade>
             </section>
+
+            {/* FAVORITES */}
+            <section className="functionality__container">
+                <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
+                <div className="functionality__bubble">
+                    <h2 className="functionality__title">Destinos favoritos</h2>
+                    <p className="functionality__text">
+                        Agregue y acceda rápidamente a tus destinos favoritos y 
+                        mantente siempre al tanto del clima que más le importa.
+                    </p>
+                    <span className="only-users">
+                        <Icon className="user-icon" icon="tabler:user-circle" />
+                        Funcionalidad de usuario
+                    </span>
+                </div>
+                <div className="functionality__image--flex">
+                    <figure className="user-favorites__image-container">
+                        <img src="/img/home/Favorites.webp"
+                            alt="test"
+                            className="functionality__image"/>
+                    </figure>
+                </div>
+                </Fade>
+            </section>
+            </div>
         </div>
     );
 }

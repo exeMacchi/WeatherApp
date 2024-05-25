@@ -70,52 +70,136 @@
 
         .hero__description__title {
             font-size: 3rem;
+            text-align: center;
         }
 
         .hero__description__text {
             font-size: 2rem;
         }
 
-/* --- WEEK - DAILY - DETAIL --- */
-.week-forecast__container,
-.daily-forecast__container,
-.forecast-detail__container {
+/* --- WEEK - DAILY - DETAIL - FAVORITES --- */
+.functionalities__container > .functionality__container:nth-child(even) > div:first-child {
+    display: flex;
+    justify-content: flex-end;
+}
+.functionalities__container > .functionality__container:nth-child(even) .functionality__image--flex {
+    justify-content: flex-start;
+}
+
+.functionality__container {
     margin: var(--spacing-24) 0;
     display: flex;
     flex-direction: column;
 }
 
-    .week-forecast__bubble,
-    .daily-forecast__bubble,
-    .forecast-detail__bubble {
+    .functionality__bubble {
         border-radius: 15px;
         padding: var(--spacing-24);
         background-color: #f4eee2ee;
         width: 70%;
     }
 
-        .week-forecast__title,
-        .daily-forecast__title,
-        .forecast-detail__title {
+        .functionality__title {
             font-size: 3rem;
         }
 
-        .week-forecast__text,
-        .daily-forecast__text,
-        .forecast-detail__text {
+        .functionality__text {
             font-size: 2rem;
             width: 90%;
         }
 
-    .week-forecast__image--flex,
-    .daily-forecast__image--flex,
-    .forecast-detail__image--flex {
+    .functionality__image--flex {
         display: flex;
         justify-content: flex-end;
     }
 
-    .week-forecast__image-container,
-    .daily-forecast__image-container,
-    .forecast-detail__image-container {
+    .functionality__image-container {
         width: 80%;
+        border-radius: 15px;
+        overflow: hidden;
     }
+
+
+/* --- WEEK --- */
+
+/* --- DAILY --- */
+
+/* --- DETAIL --- */
+
+/* --- FAVORITES --- */
+.user-favorites__image-container {
+    width: 70%;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 500px) {
+    .hero__title-logo {
+        font-size: 4rem;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__description-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #f4eee2ee;
+        border-radius: 15px;
+        padding: var(--spacing-8);
+    }
+
+        .hero__description-container > div:last-child {
+            order: -5;
+        }
+
+        .hero__description__title {
+            font-size: 2rem;
+        }
+
+        .hero__description__text {
+            font-size: 1.5rem;
+        }
+
+        .hero__description {
+            position: static;
+            transform: none;
+            width: 100%;
+            background-color: transparent;
+        }
+
+    .only-users {
+        justify-content: center;
+    }
+    
+    .functionality__container {
+        background-color: #f4eee2ee;
+        border-radius: 15px;
+        padding: var(--spacing-8);
+    }
+
+    .functionality__bubble {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-8);
+        background: transparent;
+        width: 100%;
+    }
+
+        .functionality__title {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .functionality__text {
+            font-size: 1.5rem;
+            width: 100%;
+        }
+
+    .functionality__image-container,
+    .user-favorites__image-container {
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+}

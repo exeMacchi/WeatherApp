@@ -82,8 +82,9 @@ const Register = ({setIsLogged}) => {
         })
     }
 
-    return(
-        <section className="card card--login">
+    return (
+        <div className="sub-container">
+            <section className="card card--login">
                 <section className="card__header">
                     <h2 className="card__title">Registrar</h2>
                     <span className="card__subtitle">Registrar una cuenta en WeatherAPP para guardar sus favoritos</span>
@@ -121,6 +122,7 @@ const Register = ({setIsLogged}) => {
                     </form>
                 </section>
             </section>
+        </div>
     )
 }
 
