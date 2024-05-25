@@ -90,21 +90,23 @@ const Login = ({ setBgClass, setIsLogged }) => {
                                 name="user-pass"
                                 className="input input--text"
                                 type="password"
-                                placeholder="••••••"
+                                placeholder="••••••••"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}/>
                         </div>
-                        <div className="inputs__container">
-                            <p className="singup__text">
-                                ¿No tienes una cuenta? <Link to="/register" className="link">Regístrate</Link>
-                            </p>
+                        <div className="links__container">
+
+
+                                <p className="singup__text">
+                                    ¿No tienes una cuenta? <Link to="/register" className="link">Regístrate</Link>
+                                </p>
+
+                                <p className="singup__text">
+                                    <Link to="/forgot-password" className="link">¿No recuerdas tu contraseña?</Link>
+                                </p>
+                            
                         </div>
-                        <div className="inputs__container">
-                            <p className="singup__text">
-                                <Link to="/forgot-password" className="link">¿No recuerdas tu contraseña?</Link>
-                            </p>
-                        </div>
-                        
+
                         <div className="inputs__container">
                             <button type="submit" className="btn btn--login">Ingresar</button>
                         </div>

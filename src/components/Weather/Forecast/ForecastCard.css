@@ -32,3 +32,45 @@
     font-size: 1.5rem;
     color: gray;
 }
+
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .forecast-card__container{
+        gap: var(--spacing-24);
+
+    }
+
+    .forecast-card__container img{
+        max-width: 40px;
+    }
+
+    .forecast-card__time{
+        font-size: 1.4rem;
+    }
+
+    .forecast-card__icon{
+        font-size: 1.5rem;
+    }
+
+    .forecast-card__week {
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+
+        .forecast-card__week span:nth-child(2){
+            display: none;
+        }
+
+    .forecast-card__max {
+        font-weight: var(--semibold);
+        font-size: 1.5rem;
+    }
+    
+    .forecast-card__min {
+        font-size: 1.2rem;
+        color: gray;
+    }
+
+        
+}
