@@ -77,34 +77,36 @@ const ForgotPassword = () => {
         }
     }
 
-    return(
-        <section className="card card--login">
-            <section className="card__header">
-                <h2 className="card__title">Olvidé mi contraseña</h2>
-                <span className="card__subtitle">Te enviaremos un correo electrónico con instrucciones para restablecer tu contraseña</span>
-            </section>
+    return (
+        <div className="sub-container">
+            <section className="card card--login">
+                <section className="card__header">
+                    <h2 className="card__title">Olvidé mi contraseña</h2>
+                    <span className="card__subtitle">Te enviaremos un correo electrónico con instrucciones para restablecer tu contraseña</span>
+                </section>
 
-            <section className="card__body">
-                <form onSubmit={handleOnSubmit} className="">
-                    <div className="inputs__container">
-                        <label htmlFor="label"
-                            className="label">
-                            Correo electrónico
-                        </label>
-                        <input id="login-email"
-                            name="user-email"
-                            className="input input--text"
-                            type="email"
-                            placeholder="usuario@mail.com"
-                            onChange={(e) => setEmail(e.target.value)}/>
-                    </div>
+                <section className="card__body">
+                    <form onSubmit={handleOnSubmit} className="">
+                        <div className="inputs__container">
+                            <label htmlFor="label"
+                                className="label">
+                                Correo electrónico
+                            </label>
+                            <input id="login-email"
+                                name="user-email"
+                                className="input input--text"
+                                type="email"
+                                placeholder="usuario@mail.com"
+                                onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
 
-                    <div className="inputs__container">
-                        <button type="submit" className="btn btn--login">Enviar correo</button>
-                    </div>
-                </form>
+                        <div className="inputs__container">
+                            <button type="submit" className="btn btn--login">Enviar correo</button>
+                        </div>
+                    </form>
+                </section>
             </section>
-        </section>
+        </div>
     )
 }
 

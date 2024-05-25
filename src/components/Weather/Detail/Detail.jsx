@@ -1,15 +1,32 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
+import { Link } from "react-router-dom";
 import "./Detail.css";
 
-const Detail = ({ detail }) => {
+const Detail = ({ detail, isLogged }) => {
     return (
         <section className="card">
-            <section className="card__header">
+            {
+                !isLogged
+                ?
+                <div className="forecast__overlay">
+                    <p className="forecast__overlay-text">
+                        Información solo para usuarios registrados
+                    </p>
+                    <Link className="forecast__overlay-link" to={"/login"}>
+                        Iniciar sesión
+                        </Link>
+                </div>
+                :
+                <></>
+            }
+
+            <section className={`card__header ${!isLogged ? "forecast__blur" : ""}`}>
                 <h2 className="card__title text-dg-primary">
-                    Detalle del pronostico
+                    Detalle del pronóstico
                 </h2>
             </section>
-            <section className="card__body detail-container">
+
+            <section className={`card__body detail-container ${!isLogged ? "forecast__blur" : ""}`}>
                 <article className="detail__item">
                     <div className="detail__icon-container">
                         <Icon icon="tabler:temperature" />
@@ -74,7 +91,7 @@ const Detail = ({ detail }) => {
                         <Icon icon="tabler:brand-soundcloud" />
                     </div>
                     <div className="detail__content">
-                        <h3 className="detail__title">Cubierta de nubes</h3>
+                        <h3 className="detail__title">Cobertura de nubes</h3>
                         <span className="detail__description">
                             {detail.cloud}%
                         </span>
@@ -98,7 +115,7 @@ const Detail = ({ detail }) => {
                         <Icon icon="tabler:sunset" />
                     </div>
                     <div className="detail__content">
-                        <h3 className="detail__title">Presion atmosférica</h3>
+                        <h3 className="detail__title">Presión atmosférica</h3>
                         <span className="detail__description">
                             {detail.pressure_mb} hPa
                         </span>

@@ -4,8 +4,9 @@ import "../../../styles/slider.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
-const Forecast = ({ daily, dailyForecast, weekForecast }) => {
+const Forecast = ({ daily, dailyForecast, weekForecast, isLogged }) => {
     const settings = {
         dots: false,
         infinite: false,
@@ -21,13 +22,29 @@ const Forecast = ({ daily, dailyForecast, weekForecast }) => {
     }
 
     return (
-        <section className="card forecast__container">
-            <section className="card__header">
-                <h2 className="card__title text-dg-primary">{daily ? "Pronóstico del día" : "Pronóstico de la semana"}</h2>
+        <section className={`card forecast__container`}>
+            {
+                daily && !isLogged
+                ?
+                <div className="forecast__overlay">
+                    <p className="forecast__overlay-text">
+                        Información solo para usuarios registrados
+                    </p>
+                    <Link className="forecast__overlay-link" to={"/login"}>
+                        Iniciar sesión
+                        </Link>
+                </div>
+                :
+                <></>
+            }
+            <section className={`card__header ${daily && !isLogged ? "forecast__blur" : ""}`}>
+                <h2 className="card__title text-dg-primary">
+                    {daily ? "Pronóstico del día" : "Pronóstico de la semana"}
+                </h2>
             </section>
             <section className="card__body">
                 <section className="slider-container">
-                    <Slider className="slider" {...settings}>
+                    <Slider className={`slider ${daily && !isLogged ? "forecast__blur" : ""}`} {...settings}>
                         {
                             daily 
                             ?

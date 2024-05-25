@@ -136,7 +136,7 @@
     }
 
 .bg--default{
-    background: var(--bg);
+    background: var(--dg-default);
 }
     .bg--default .nav,
     .bg--default .nav__logo,

@@ -14,11 +14,11 @@
     --dg-gray: linear-gradient(-45deg, #bdc3c7, #2c3e50);
     --dg-lightgray: linear-gradient(-45deg, #8e9eab, #eef2f3);
     --dg-purple: linear-gradient(45deg, #457fca, #5691c8);
-    /* --dg-default: linear-gradient(30deg, #faa499 0%, #fedc6d 50%, #faa499 100%); */
+    --dg-default: linear-gradient(30deg,#f7797d, #fbd786, #c6ffdd);
     
 
     /* --dg-primary: linear-gradient(54deg,#b94cdb,#fe815e); */
-    --dg-primary: linear-gradient(to right, #5433ff, #20bdff);
+    --dg-primary: linear-gradient(to right, #5433ff, #313c41);
 
     --text-black-hard: #2c2f35;
     --text-black-solid: #474e59;
