@@ -23,7 +23,7 @@ const getCity = async (searchValue) => {
             countryCode = await getCountryCode(advancedSearch[1].trim());
         }
 
-        const res = await fetch(`${BASE_URL}/cities?namePrefix=${city}&languageCode=es${countryCode ? `&countryIds=${countryCode}` : ""}`, 
+        const res = await fetch(`${BASE_URL}/cities?namePrefix=${city}&languageCode=es&minPopulation=50000${countryCode ? `&countryIds=${countryCode}` : ""}`, 
                                  options);
         if (!res.ok) {
             throw new Error("Error: " + res.statusText);

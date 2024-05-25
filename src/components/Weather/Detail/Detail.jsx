@@ -6,7 +6,7 @@ const Detail = ({ detail }) => {
         <section className="card">
             <section className="card__header">
                 <h2 className="card__title text-dg-primary">
-                    Detalle del pronostico
+                    Detalle del pronóstico
                 </h2>
             </section>
             <section className="card__body detail-container">
@@ -74,7 +74,7 @@ const Detail = ({ detail }) => {
                         <Icon icon="tabler:brand-soundcloud" />
                     </div>
                     <div className="detail__content">
-                        <h3 className="detail__title">Cubierta de nubes</h3>
+                        <h3 className="detail__title">Cobertura de nubes</h3>
                         <span className="detail__description">
                             {detail.cloud}%
                         </span>
@@ -98,7 +98,7 @@ const Detail = ({ detail }) => {
                         <Icon icon="tabler:sunset" />
                     </div>
                     <div className="detail__content">
-                        <h3 className="detail__title">Presion atmosférica</h3>
+                        <h3 className="detail__title">Presión atmosférica</h3>
                         <span className="detail__description">
                             {detail.pressure_mb} hPa
                         </span>
