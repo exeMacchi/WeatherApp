@@ -9,3 +9,14 @@
     font-size: 1.5rem;
     text-align: center;
 }
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .footer {
+        height: auto;
+        width: 100%;
+        padding: var(--spacing-16) var(--spacing-24);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}

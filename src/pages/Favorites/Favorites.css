@@ -52,3 +52,34 @@
     display: flex;
     gap: var(--spacing-12);
 }
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .fav__ul{
+        gap: var(--spacing-16);
+    }
+    .fav__li{
+        width: 100%;
+        padding: 0;
+        padding-top: var(--spacing-16);
+        flex-direction: column;
+        gap: var(--spacing-48);
+        border-left: none;
+        border-top: 2px solid var(--bg);
+    }
+    .fav__li div:first-child{
+        width: 100%;
+    }
+
+    .fav__text-container{
+        width: 100%;
+        justify-content: start;
+    }
+
+    .fav__tag{
+        margin-bottom: var(--spacing-4);
+        font-size: 2rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}

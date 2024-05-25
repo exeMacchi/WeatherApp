@@ -27,3 +27,19 @@
     font-weight: 500;
     color: var(--text-black-medium);
 }
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .card{
+        padding: var(--spacing-16);
+    }
+
+    .card__header{
+        margin-bottom: 0;
+    }
+
+    .card__title{
+        font-size: 1.8rem;
+
+    }
+}
