@@ -64,18 +64,22 @@
 li, .bars {
   list-style: none;
 }
+
 /* Media Query 768 */
 
 @media (max-width:768px){
    
-  .container{padding: 0;}
-
+  .container{
+    padding: 0;
+  }
+ 
   .bars {
     background: rgb(73, 73, 73);
     display: block;
   }
  
   .desplegable{
+    position: absolute;
     display: flex;
     flex-direction: column;
     transform: translate(-100%);
@@ -83,6 +87,7 @@ li, .bars {
     /* font-size: 1.1rem; */
     width: 50%;  /*tablet*/
     background: rgb(73, 73, 73);
+    z-index: 1000;
   }
 
   .nav__logo{
@@ -96,11 +101,6 @@ li, .bars {
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
-  }
-
-  .hero__description {
-    /* acá hay que bajar la descripción por ahora le puse none */
-    display: none;
   }
 
   button {
@@ -130,7 +130,7 @@ li, .bars {
     transform: translate(0%);
     transition: 0.5s;
     width: 50%;
-    background: rgba(73, 73, 73, .5);
+    background: rgba(218, 229, 240, 0.993);
     backdrop-filter: 3px;
   }
 
