@@ -1,15 +1,32 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
+import { Link } from "react-router-dom";
 import "./Detail.css";
 
-const Detail = ({ detail }) => {
+const Detail = ({ detail, isLogged }) => {
     return (
         <section className="card">
-            <section className="card__header">
+            {
+                !isLogged
+                ?
+                <div className="forecast__overlay">
+                    <p className="forecast__overlay-text">
+                        Información solo para usuarios registrados
+                    </p>
+                    <Link className="forecast__overlay-link" to={"/login"}>
+                        Iniciar sesión
+                        </Link>
+                </div>
+                :
+                <></>
+            }
+
+            <section className={`card__header ${!isLogged ? "forecast__blur" : ""}`}>
                 <h2 className="card__title text-dg-primary">
                     Detalle del pronóstico
                 </h2>
             </section>
-            <section className="card__body detail-container">
+
+            <section className={`card__body detail-container ${!isLogged ? "forecast__blur" : ""}`}>
                 <article className="detail__item">
                     <div className="detail__icon-container">
                         <Icon icon="tabler:temperature" />

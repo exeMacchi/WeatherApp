@@ -1,8 +1,31 @@
 .forecast__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
+.forecast__blur {
+    filter: blur(10px);
+}
+
+.forecast__overlay {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+    .forecast__overlay-text {
+        font-size: 3rem;
+    }
+
+    .forecast__overlay-link {
+        font-size: 5rem;
+    }
 
 
 .forecast__cards {

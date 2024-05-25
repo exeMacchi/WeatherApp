@@ -14,8 +14,8 @@ const organizeCurrentForecast = (weatherData) => {
     const localHour = dateArray[1];
     const locate = `${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}`;
     const icon = getWeatherIcon(weatherData.current.condition.code, Number(localHour.match(/^\d+/)[0]));
-    const actualTemperature = `${weatherData.current.temp_c}°`;
-    const thermalSensation = `${weatherData.current.feelslike_c}°`;
+    const actualTemperature = `${Math.round(weatherData.current.temp_c)}°`;
+    const thermalSensation = `${Math.round(weatherData.current.feelslike_c)}°`;
     const humidity = `${weatherData.current.humidity}%`;
     const wind = `${weatherData.current.wind_kph} km/h`;
     const condition = weatherData.current.condition.text;
@@ -56,7 +56,7 @@ const organizeDailyForecast = (forecast, localHour) => {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[0].hour[hour].condition.code, Number(hour)),
-            max: `${forecast[0].hour[hour].temp_c}°C`
+            max: `${Math.round(forecast[0].hour[hour].temp_c)}°C`
         }
         dailyForecast.push(hourForecast);
     }
@@ -67,7 +67,7 @@ const organizeDailyForecast = (forecast, localHour) => {
         let hourForecast = {
             hour: `${hour}:00`,
             icon: getWeatherIcon(forecast[1].hour[hour].condition.code, Number(hour)),
-            max: `${forecast[1].hour[hour].temp_c}°C`
+            max: `${Math.round(forecast[1].hour[hour].temp_c)}°C`
         }
         dailyForecast.push(hourForecast);
     }
@@ -91,8 +91,8 @@ const organizeWeekForecast = (forecast) => {
         let dayForecast = {
             day: formatDayOfWeek(forecast[i].date),
             icon: getWeatherIcon(forecast[i].day.condition.code, 12),
-            max: `${forecast[i].day.maxtemp_c}°C`,
-            min: `${forecast[i].day.mintemp_c}°C`
+            max: `${Math.round(forecast[i].day.maxtemp_c)}°C`,
+            min: `${Math.round(forecast[i].day.mintemp_c)}°C`
         }
         weekForecast.push(dayForecast);
     }

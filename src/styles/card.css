@@ -1,4 +1,5 @@
-.card{
+.card {
+    position: relative;
     width: 100%;
     margin-bottom: var(--spacing-24);
     padding: var(--spacing-24);
@@ -7,22 +8,21 @@
     box-shadow: var(--bs-primary);
 }
 
-.card__header{
+.card__header {
     margin-bottom: var(--spacing-24);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card__body{
-}
+/* .card__body { } */
 
-.card__title{
+.card__title {
     font-size: 2.5rem;
     color: var(--text-black-solid);
 }
 
-.card__subtitle{
+.card__subtitle {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-black-medium);

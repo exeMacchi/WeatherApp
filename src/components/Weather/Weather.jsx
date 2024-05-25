@@ -76,15 +76,13 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
         }
 
         return (
-            <Fade cascade={true}
-                      triggerOnce={true}
-                      damping={0.5}>
+            <Fade cascade triggerOnce damping={0.5}>
                 <section className="weather-container">
                     {favoriteButton()}
                     <Current weather={currentForecast}/>
-                    <Forecast daily dailyForecast={dailyForecast}/>
                     <Forecast weekForecast={weekForecast}/>
-                    <Detail detail={currentDetails}/>
+                    <Forecast daily dailyForecast={dailyForecast} isLogged={isLogged.logged}/>
+                    <Detail detail={currentDetails} isLogged={isLogged.logged}/>
                 </section>
             </Fade>
         );
