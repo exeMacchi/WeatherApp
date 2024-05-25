@@ -39,7 +39,7 @@
         text-transform: uppercase;
     }
 
-    .fav__data{}
+    .fav__data{
         .fav__data p{
             font-weight: var(--semibold);
 
@@ -47,6 +47,7 @@
         .fav__data p span{
             font-weight: var(--regular);
         }
+    }
 
 .li__buttons-container{
     display: flex;

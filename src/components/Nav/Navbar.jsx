@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom"
 import { signOut } from "firebase/auth"
 import { auth } from "../../services/firebase"
 import "./Navbar.css"
+import { useState } from 'react';
+import { documentId } from "firebase/firestore"
+
 
 const Navbar = ({ isLogged, setIsLogged }) => {
     const navigate = useNavigate()
@@ -25,16 +28,31 @@ const Navbar = ({ isLogged, setIsLogged }) => {
         }
     }
 
+    const open_close_burger = () => {
+        let menu_deploy = document.getElementById('menu');
+        let close_menu = document.getElementById('x');
+        menu_deploy.classList.toggle('open_menu');
+        close_menu.classList.toggle('place_x');
+       
+    }
 
     return(
-            <nav className="nav">
+        
+        <>
+        <li className="bars" >
+            <button id="x" className="menu_button" onClick={open_close_burger}></button>
+        </li>
+        
+        {/* agrege id menu e clase desplegable */}
+            <nav className="nav desplegable" id="menu">
                 <div className="nav__logo nav__link">
                     <Link className="nav__logo" to="/" >
                         <Icon className="nav__logo-icon" icon="tabler:cloud" />
                         <span className="nav__logo-text">WeatherAPP</span>
                     </Link>
                 </div>
-                <ul className="nav__ul">
+                
+                <ul className= "nav__ul">
                     <li className="nav__li" onClick={getPosition}>
                         <span className="nav__link">
                             <Icon className="nav__icon" icon="tabler:map-pin" />
@@ -49,7 +67,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                             </span>
                         </Link>
                     </li>
-
+            
                     {isLogged.logged? (
                         <>
                         <li className="nav__li">
@@ -75,9 +93,11 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                         </li>
                         </>
                     )}
+                     
                 </ul>
-
+               
             </nav>
+            </>
     )
 }
 
