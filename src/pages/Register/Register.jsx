@@ -86,8 +86,13 @@ const Register = ({setIsLogged}) => {
         <div className="sub-container">
             <section className="card card--login">
                 <section className="card__header">
-                    <h2 className="card__title">Registrar</h2>
-                    <span className="card__subtitle">Registrar una cuenta en WeatherAPP para guardar sus favoritos</span>
+                    <h2 className="card__title text-dg-primary">
+                        Registrar
+                    </h2>
+                    <p className="card__subtitle">
+                        Registrar una cuenta en WeatherAPP para guardar sus 
+                        favoritos.
+                    </p>
                 </section>
 
                 <section className="card__body">

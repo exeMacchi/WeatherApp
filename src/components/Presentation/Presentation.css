@@ -8,12 +8,14 @@
 .only-users {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    align-self: flex-end;
     gap: 5px;
     font-size: 1.5rem;
+    font-weight: 600;
 }
     .user-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        color: #5433ff;
     }
 
 /* --- HERO --- */
@@ -30,6 +32,7 @@
 
     .hero__title-logo {
         font-size: 8rem;
+        color: #5433ff;
     }
 
     .hero__title {
@@ -62,6 +65,7 @@
         width: 70%;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: var(--spacing-16);
         background-color: #f4eee2ee;
         padding: var(--spacing-24);
@@ -93,6 +97,10 @@
 }
 
     .functionality__bubble {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-8);
         border-radius: 15px;
         padding: var(--spacing-24);
         background-color: #f4eee2ee;
@@ -132,13 +140,17 @@
 }
 
 /* --- RESPONSIVE --- */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+    .presentation__container {
+        gap: 0px;
+    }
+
     .hero__title-logo {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .hero__title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .hero__description-container {
@@ -147,6 +159,7 @@
         background-color: #f4eee2ee;
         border-radius: 15px;
         padding: var(--spacing-8);
+        margin: var(--spacing-16);
     }
 
         .hero__description-container > div:last-child {
@@ -154,11 +167,11 @@
         }
 
         .hero__description__title {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         .hero__description__text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .hero__description {
@@ -169,13 +182,14 @@
         }
 
     .only-users {
-        justify-content: center;
+        align-self: center;
     }
     
     .functionality__container {
         background-color: #f4eee2ee;
         border-radius: 15px;
         padding: var(--spacing-8);
+        margin: var(--spacing-16);
     }
 
     .functionality__bubble {
@@ -187,12 +201,12 @@
     }
 
         .functionality__title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-align: center;
         }
 
         .functionality__text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             width: 100%;
         }
 

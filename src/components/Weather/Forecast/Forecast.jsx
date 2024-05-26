@@ -28,11 +28,11 @@ const Forecast = ({ daily, dailyForecast, weekForecast, isLogged }) => {
                 ?
                 <div className="forecast__overlay">
                     <p className="forecast__overlay-text">
-                        Información solo para usuarios registrados
+                        Información disponible solo para usuarios registrados
                     </p>
-                    <Link className="forecast__overlay-link" to={"/login"}>
+                    <Link className="forecast__overlay-link btn" to={"/login"}>
                         Iniciar sesión
-                        </Link>
+                    </Link>
                 </div>
                 :
                 <></>

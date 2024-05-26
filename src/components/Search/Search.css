@@ -14,10 +14,6 @@
         width: 0px;
     }
 
-    /* .search__bar .css-1xc3v61-indicatorContainer {
-        display: none;
-    } */
-
 .search__button {
     background-color: transparent;
     border: 1px solid #fff;
@@ -30,3 +26,10 @@
     .search__button:hover {
         background-color: #999999b4;
     }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .search__container {
+        margin: var(--spacing-16);
+    }
+}

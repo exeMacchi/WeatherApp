@@ -36,7 +36,7 @@
     }
 
 /* Buttons */
-.btn{
+.btn {
     width: fit-content;
     padding: var(--spacing-12) var(--spacing-24);
     display: flex;
@@ -133,8 +133,8 @@
         font-size: 1.8rem;
     }
 
-    .btn{
+    .btn {
         padding: var(--spacing-20) var(--spacing-24);
-        font-size: 2rem;
+        /* font-size: 2rem; */
     }
 }

@@ -81,8 +81,13 @@ const ForgotPassword = () => {
         <div className="sub-container">
             <section className="card card--login">
                 <section className="card__header">
-                    <h2 className="card__title">Olvidé mi contraseña</h2>
-                    <span className="card__subtitle">Te enviaremos un correo electrónico con instrucciones para restablecer tu contraseña</span>
+                    <h2 className="card__title text-dg-primary">
+                        Olvidé mi contraseña
+                    </h2>
+                    <p className="card__subtitle">
+                        Te enviaremos un correo electrónico con instrucciones 
+                        para restablecer tu contraseña.
+                    </p>
                 </section>
 
                 <section className="card__body">

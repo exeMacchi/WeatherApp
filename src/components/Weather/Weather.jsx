@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
 
-    const [ isFavorite, setIsFavorite ] = useState(null);
+    const [isFavorite, setIsFavorite] = useState(null);
 
     useEffect(() => {
         if (isLogged.logged) {
@@ -63,15 +63,21 @@ const Weather = ({isLoading, show, weatherData, isLogged, favorite}) => {
         // Si ya existe el favorito, se desactiva el botón de agregar
         const favoriteButton = ()  =>{
             if (isLogged.logged) {
-                return isFavorite ? (
-                    <div className="favorite-button-container">
-                        <button disabled className="btn--fav btn--fav-disabled"><Icon icon="tabler:star-filled" /></button>
-                    </div>
-                ):(
-                    <div className="favorite-button-container">
-                        <button onClick={handleAddFavorite} className="btn--fav"><Icon icon="tabler:star" /><span>Agregar</span></button>
-                    </div>
-                )
+                return isFavorite 
+                ? 
+                <div className="favorite-button-container">
+                    <button disabled className="btn--fav btn--fav-disabled">
+                        <Icon icon="tabler:star-filled"/>
+                    </button>
+                </div>
+                :
+                <div className="favorite-button-container">
+                    <button onClick={handleAddFavorite} className="btn--fav">
+                        <Icon icon="tabler:star"/>
+                        <span>Agregar</span>
+                    </button>
+                </div>
+                
             }
         }
 

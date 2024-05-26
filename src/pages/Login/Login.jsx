@@ -61,8 +61,13 @@ const Login = ({ setBgClass, setIsLogged }) => {
         <div className="sub-container">
             <section className="card card--login">
                 <section className="card__header">
-                    <h2 className="card__title">Ingresar a su cuenta</h2>
-                    <span className="card__subtitle">Ingrese a su cuenta de WeatherAPP para acceder a sus favoritos</span>
+                    <h2 className="card__title text-dg-primary">
+                        Ingresar a su cuenta
+                    </h2>
+                    <p className="card__subtitle">
+                        Ingrese a su cuenta de WeatherAPP para acceder a sus 
+                        favoritos.
+                    </p>
                 </section>
 
                 <section className="card__body">
