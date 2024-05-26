@@ -141,3 +141,11 @@
     .bg--default .current-container {
         color: var(--text-black-solid);
     }
+
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}
