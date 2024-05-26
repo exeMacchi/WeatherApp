@@ -87,7 +87,7 @@ const Register = ({setIsLogged}) => {
             <section className="card card--login">
                 <section className="card__header">
                     <h2 className="card__title text-dg-primary">
-                        Registrar
+                        Registrarse
                     </h2>
                     <p className="card__subtitle">
                         Registrar una cuenta en WeatherAPP para guardar sus 
