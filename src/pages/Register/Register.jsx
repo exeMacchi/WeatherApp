@@ -74,7 +74,7 @@ const Register = ({setIsLogged}) => {
         createUserWithEmailAndPassword(auth, data.email, data.pass)
         .then((userCredential) => {
             console.log(userCredential);
-            setIsLogged({logged: true, uid: userCredentials.user.uid});
+            setIsLogged({logged: true, uid: userCredential.user.uid});
             initializeFavoritesByUser(userCredential.user.uid)
             alertOk()
         }).catch((error) => {
