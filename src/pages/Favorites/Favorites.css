@@ -1,3 +1,12 @@
+.favorite__container {
+    display: grid;
+    place-items: center;
+    margin: var(--spacing-24);
+}
+    .favorite__title {
+        font-size: 3rem;
+    }
+
 .card__body--favorites{
     display: flex;
     flex-direction: column;
@@ -56,28 +65,29 @@
 
 /* MobileResponsive */
 @media screen and (max-width: 768px) {
-    .fav__ul{
+    .fav__ul {
         gap: var(--spacing-16);
     }
-    .fav__li{
+    .fav__li {
         width: 100%;
         padding: 0;
         padding-top: var(--spacing-16);
         flex-direction: column;
-        gap: var(--spacing-48);
+        gap: var(--spacing-24);
         border-left: none;
         border-top: 2px solid var(--bg);
     }
-    .fav__li div:first-child{
+    .fav__li div:first-child {
         width: 100%;
     }
 
-    .fav__text-container{
+    .fav__text-container {
         width: 100%;
         justify-content: start;
+        align-items: center;
     }
 
-    .fav__tag{
+    .fav__tag {
         margin-bottom: var(--spacing-4);
         font-size: 2rem;
         letter-spacing: 1px;

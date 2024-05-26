@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,11 +12,11 @@
     padding: var(--spacing-8) var(--spacing-24);
 }
 
-.container--main{
+.container--main {
     flex-grow: 1;
 }
 
-.sub-container{
+.sub-container {
     min-height: 100%;
     display: grid;
     justify-content: center;
@@ -26,7 +26,7 @@
 
 /* Clases globales */
 
-.text-dg-primary{
+.text-dg-primary {
     width: fit-content;
     background-image: var(--dg-primary);
     background-clip: text;
@@ -36,7 +36,7 @@
 
 
 /* Background icons style */
-.bg--sunny{
+.bg--sunny {
     background: var(--dg-lightblue);
 }
     .bg--sunny .nav,
@@ -45,7 +45,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--partly_cloudy_night{
+.bg--partly_cloudy_night {
     background: var(--dg-deepblue);
 }
     .bg--partly_cloudy_night .nav,
@@ -54,7 +54,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--clear_night{
+.bg--clear_night {
     background: var(--dg-darkblue);
 }
     .bg--clear_night .nav,
@@ -63,7 +63,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--partly_cloudy_day{
+.bg--partly_cloudy_day {
     background: var(--dg-purple);
 }
     .bg--partly_cloudy_day .nav,
@@ -72,7 +72,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--cloud{
+.bg--cloud {
     background: var(--dg-lightgray);
 }
     .bg--cloud .nav,
@@ -81,7 +81,7 @@
         color: var(--text-black-solid);
     }
 
-.bg--foggy{
+.bg--foggy {
     background: var(--dg-lightgray);
 }
     .bg--foggy .nav,
@@ -90,7 +90,7 @@
         color: var(--text-black-solid);
     }
 
-.bg--weather_mix{
+.bg--weather_mix {
     background: var(--dg-weather_mix);
 }
     .bg--weather_mix .nav,
@@ -99,7 +99,7 @@
         color: var(--text-black-solid);
     }
 
-.bg--weather_snowy{
+.bg--weather_snowy {
     background: var(--dg-ultralightblue);
 }
     .bg--weather_snowy .nav,
@@ -108,7 +108,7 @@
         color: var(--text-black-solid);
     }
 
-.bg--rainy{
+.bg--rainy {
     background: var(--dg-gray);
 }
     .bg--rainy .nav,
@@ -117,7 +117,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--thunderstorm{
+.bg--thunderstorm {
     background: var(--dg-gray);
 }
     .bg--thunderstorm .nav,
@@ -126,7 +126,7 @@
         color: var(--text-white-hard);
     }
 
-.bg--routine{
+.bg--routine {
     background: var(--dg-routine);
 }
     .bg--routine .nav,
@@ -135,7 +135,7 @@
         color: var(--text-black-solid);
     }
 
-.bg--default{
+.bg--default {
     background: var(--dg-default);
 }
     .bg--default .nav,

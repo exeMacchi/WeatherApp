@@ -1,16 +1,24 @@
-.card--login{
+.card--login {
     max-width: 600px;
+    margin: var(--spacing-24);
+    display: grid;
+    place-items: center;
 }
 
-.btn--login{
+.btn--login {
     width: 100%;
+    margin: 0px;
 }
 
-.singup__text{
+.singup__text {
     font-size: 1.5rem;
 }
 
-.card__body form{
+.card__body {
+    width: 100%;
+}
+
+.card__body form {
     margin-top: var(--spacing-32);
     display: flex;
     flex-direction: column;
@@ -34,12 +42,12 @@
         font-size: 1.5rem;
     }
 
-    .links__container{
+    .links__container {
         padding: var(--spacing-24) 0;
         align-items: center;
     }
 
-    .singup__text{
+    .singup__text {
         font-size: 1.8rem;
         text-align: center;
     }
@@ -47,5 +55,4 @@
     form .inputs__container:last-child{
         margin-top: 0;
     }
-    
 }

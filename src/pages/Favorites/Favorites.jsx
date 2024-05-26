@@ -190,12 +190,15 @@ const Favorites = ({ setBgClass, isLogged }) => {
 
     if (isLogged) {
         return (
+            <div className="favorite__container">
             <div className="card">
                 <div className="card__header">
-                    <h1 className="card__title">Favoritos</h1>
-                    <span className="card__subtitle">
-                        Aqui se listan tus ciudades favoritas
-                    </span>
+                    <h1 className="favorite__title text-dg-primary">
+                        Favoritos
+                    </h1>
+                    <p className="card__subtitle">
+                        Aqui se listan tus ciudades favoritas.
+                    </p>
                 </div>
                 <div className="card__body card__body--favorites">
                     {isLoading? <Spinner /> 
@@ -242,8 +245,10 @@ const Favorites = ({ setBgClass, isLogged }) => {
             }
                 </div>
             </div>
+            </div>
         );
-    } else {
+    } 
+    else {
         navigate("/login");
     }
 };

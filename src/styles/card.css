@@ -30,16 +30,17 @@
 
 /* MobileResponsive */
 @media screen and (max-width: 768px) {
-    .card{
+    .card {
         padding: var(--spacing-16);
+        width: 90%;
     }
 
-    .card__header{
+    .card__header {
         margin-bottom: 0;
+        align-items: center;
     }
 
-    .card__title{
+    .card__title {
         font-size: 1.8rem;
-
     }
 }

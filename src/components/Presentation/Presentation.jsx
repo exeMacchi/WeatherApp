@@ -1,8 +1,10 @@
 import { Fade } from "react-awesome-reveal"
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
+import { useState } from "react";
 import "./Presentation.css";
 
 const Presentation = () => {
+    const [isPhone, setIsPhone] = useState(window.innerWidth > 768);
 
     return (
         <div className="presentation__container">
@@ -10,12 +12,12 @@ const Presentation = () => {
                 <Fade triggerOnce>
                     <div className="hero__title-container">
                         <Icon className="hero__title-logo" icon="tabler:cloud" />
-                        <h1 className="hero__title">WeatherAPP</h1>
+                        <h1 className="hero__title text-dg-primary">WeatherAPP</h1>
                     </div>
                 </Fade>
 
                 <div className="hero__description-container">
-                    <Fade cascade triggerOnce delay={.5} damping={0.5}>
+                    <Fade cascade={isPhone} triggerOnce delay={.5} damping={0.5}>
                         <figure className="hero__image-container">
                             <img src="/img/home/Sunny.webp"
                                  alt="test"
@@ -37,7 +39,9 @@ const Presentation = () => {
                                  className="hero__image"/>
                         </figure>
                         <div className="hero__description">
-                            <h2 className="hero__description__title">Clima en tiempo real</h2>
+                            <h2 className="hero__description__title text-dg-primary">
+                                Clima en tiempo real
+                            </h2>
                             <p className="hero__description__text">
                                 Obtenga el clima de cualquier ciudad del mundo al 
                                 alcance de un solo click, con pronósticos detallados 
@@ -51,9 +55,9 @@ const Presentation = () => {
             <div className="functionalities__container">
             {/* WEEK */}
             <section className="functionality__container">
-                <Fade cascade triggerOnce damping={0.5} fraction={.5}>
+                <Fade cascade={isPhone} triggerOnce damping={0.5} fraction={.5}>
                     <div className="functionality__bubble">
-                        <h2 className="functionality__title">Pronóstico semanal</h2>
+                        <h2 className="functionality__title text-dg-primary">Pronóstico semanal</h2>
                         <p className="functionality__text">
                             Manténgase informado sobre el clima de la semana con 
                             nuestro pronóstico extendido.
@@ -75,9 +79,9 @@ const Presentation = () => {
 
             {/* DAILY */}
             <section className="functionality__container">
-                <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
+                <Fade cascade={isPhone} triggerOnce damping={0.5} fraction={0.5}>
                     <div className="functionality__bubble">
-                        <h2 className="functionality__title">Pronóstico diario</h2>
+                        <h2 className="functionality__title text-dg-primary">Pronóstico diario</h2>
                         <p className="functionality__text">
                             Planifique su día con confianza con nuestro pronóstico 
                             detallado hora por hora.
@@ -85,7 +89,7 @@ const Presentation = () => {
                             en su ciudad a lo largo del día, para que pueda tomar 
                             decisiones informadas sobre sus actividades.
                         </p>
-                        <span className="only-users">
+                        <span className="only-users text-dg-primary">
                             <Icon className="user-icon" icon="tabler:user-circle" />
                             Funcionalidad de usuario
                         </span>
@@ -102,15 +106,15 @@ const Presentation = () => {
 
             {/* DETAIL */}
             <section className="functionality__container">
-                <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
+                <Fade cascade={isPhone} triggerOnce damping={0.5} fraction={0.5}>
                 <div className="functionality__bubble">
-                    <h2 className="functionality__title">Pronóstico detallado</h2>
+                    <h2 className="functionality__title text-dg-primary">Pronóstico detallado</h2>
                     <p className="functionality__text">
                         Obtenga información precisa y completa sobre el clima, 
                         incluyendo sensación térmica, humedad, velocidad del viento,
                         presión atmosférica y mucho más.
                     </p>
-                    <span className="only-users">
+                    <span className="only-users text-dg-primary">
                         <Icon className="user-icon" icon="tabler:user-circle" />
                         Funcionalidad de usuario
                     </span>
@@ -127,14 +131,14 @@ const Presentation = () => {
 
             {/* FAVORITES */}
             <section className="functionality__container">
-                <Fade cascade triggerOnce damping={0.5} fraction={0.5}>
+                <Fade cascade={isPhone} triggerOnce damping={0.5} fraction={0.5}>
                 <div className="functionality__bubble">
-                    <h2 className="functionality__title">Destinos favoritos</h2>
+                    <h2 className="functionality__title text-dg-primary">Destinos favoritos</h2>
                     <p className="functionality__text">
                         Agregue y acceda rápidamente a tus destinos favoritos y 
                         mantente siempre al tanto del clima que más le importa.
                     </p>
-                    <span className="only-users">
+                    <span className="only-users text-dg-primary">
                         <Icon className="user-icon" icon="tabler:user-circle" />
                         Funcionalidad de usuario
                     </span>

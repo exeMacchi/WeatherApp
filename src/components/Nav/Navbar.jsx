@@ -36,8 +36,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
        
     }
 
-    return(
-        
+    return (
         <>
         <li className="bars" >
             <button id="x" className="menu_button" onClick={open_close_burger}></button>
@@ -68,7 +67,9 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                         </Link>
                     </li>
             
-                    {isLogged.logged? (
+                    {
+                        isLogged.logged
+                        ? 
                         <>
                         <li className="nav__li">
                         <Link className="nav__link" to="/favorites" >
@@ -83,7 +84,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                             </span>
                         </li>
                         </>
-                    ):(
+                        :
                         <>
                         <li className="nav__li">
                             <Link className="nav__link" to="/login" >
@@ -92,10 +93,8 @@ const Navbar = ({ isLogged, setIsLogged }) => {
                             </Link>
                         </li>
                         </>
-                    )}
-                     
+                    }
                 </ul>
-               
             </nav>
             </>
     )
