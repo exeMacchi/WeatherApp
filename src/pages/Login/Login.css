@@ -5,6 +5,10 @@
     place-items: center;
 }
 
+    .card--login > .card__header {
+        align-items: center;
+    }
+
 .btn--login {
     width: 100%;
     margin: 0px;
