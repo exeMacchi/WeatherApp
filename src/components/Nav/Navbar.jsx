@@ -39,12 +39,18 @@ const Navbar = ({ isLogged, setIsLogged }) => {
     return (
         <>
         <li className="bars" >
+            <div className="nav__logo nav__link">
+                <Link className="nav__logo" to="/" >
+                    <Icon className="nav__logo-icon" icon="tabler:cloud" />
+                    <span className="nav__logo-text">WeatherAPP</span>
+                </Link>
+            </div>
             <button id="x" className="menu_button" onClick={open_close_burger}></button>
         </li>
         
         {/* agrege id menu e clase desplegable */}
             <nav className="nav desplegable" id="menu">
-                <div className="nav__logo nav__link">
+                <div className="nav__logo nav__link nav__logo-mobile">
                     <Link className="nav__logo" to="/" >
                         <Icon className="nav__logo-icon" icon="tabler:cloud" />
                         <span className="nav__logo-text">WeatherAPP</span>
