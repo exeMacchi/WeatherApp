@@ -63,7 +63,8 @@
 }
 
 
-li, .bars {
+.bars {
+    display: none;
   list-style: none;
   font-size: 1.6rem;
 }
@@ -77,13 +78,21 @@ li, .bars {
 
 @media (max-width:768px){
    
+    .header{
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
   .container {
     padding: 0;
   }
  
     .bars {
       background: rgb(73, 73, 73);
-      display: block;
+      display: flex;
+      justify-content: space-between;
       text-align: center;
     }
       .bars .menu_button {
@@ -104,6 +113,10 @@ li, .bars {
 
     .nav__logo {
       margin: 5px;
+    }
+
+    .nav__logo-mobile{
+        display: none;
     }
       .nav__logo-text {
         color: var(--text-white-hard);

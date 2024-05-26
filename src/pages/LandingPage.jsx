@@ -21,7 +21,7 @@ const LandingPage = () => {
 
     return (
         <div className={`wrapper bg--${bgClass}`}>
-            <header className="container">
+            <header className="container header">
                 <Navbar isLogged={isLogged} setIsLogged={setIsLogged}/>
             </header>
             <main className="container container--main">
