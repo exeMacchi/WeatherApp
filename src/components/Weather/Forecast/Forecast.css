@@ -1,12 +1,48 @@
 .forecast__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
+.forecast__blur {
+    filter: blur(10px);
+}
+
+.forecast__overlay {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+    .forecast__overlay-text {
+        font-size: 2.5rem;
+    }
+
+    .forecast__overlay-link {
+        font-size: 5rem;
+    }
 
 
 .forecast__cards {
     display: flex;
     gap: 20px;
     justify-content: space-between;
+}
+
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .forecast__overlay-text {
+        font-size: 2rem;
+        padding: 0 var(--spacing-20);
+    }
 }

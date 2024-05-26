@@ -1,53 +1,42 @@
 // Funciones
-import { useState } from "react";
-import getWeatherData from "../services/weatherAPI";
+import { useState } from "react"
+import { Routes, Route } from "react-router-dom";
+
+// Paginas
+import HomePage from "./HomePage/HomePage";
+import WeatherPage from "./WeatherPage/WeatherPage";
+import Login from "./Login/Login";
 
 // Componentes
-import Search from "../components/Search/Search";
-import "./LandingPage.css";
-import Weather from "../components/Weather/Weather";
-
-
-// El color del background se cambia según la información de la API. El ícono depende de
-// la información que se recibe.
-/* if (weatherTest.icon === "rainy") {
-    document.body.classList.add("background__rainy");
-}
-else if (weatherTest.icon === "sunny") {
-    document.body.classList.add("background__sunny");
-} */
+import Navbar from "../components/Nav/Navbar";
+import Register from "./Register/Register";
+import Favorites from "./Favorites/Favorites";
+import Footer from "../components/Footer/Footer";
+import About from "./About/About";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 const LandingPage = () => {
-    const [show, setShow] = useState(false)
-    const [loading, setLoading] = useState(false)
-    const [weatherData, setWeatherData] = useState(null)
-
-    // Cuando se selecciona una ciudad en el buscador.
-    const handleOnSearchChange = async (searchData) => {
-        try {
-            setLoading(true)
-            await getWeatherData(searchData.value).then ((data) => {
-                setWeatherData(data)
-                setLoading(false)
-                setShow(true)
-            });
-        }
-        catch (err) {
-            console.error(err);
-            setLoading(false)
-            setShow(false)
-        }
-    }
+    const [ bgClass, setBgClass ] = useState("default"); // Controlar el background
+    const [ isLogged, setIsLogged] = useState(false); // Controlar la sesión
 
     return (
-        <main className="container">
-            <Search onSearchChange={handleOnSearchChange}/>
-            <Weather
-                isLoading={loading}
-                show={show}
-                weatherData={weatherData}
-            />
-        </main>
+        <div className={`wrapper bg--${bgClass}`}>
+            <header className="container header">
+                <Navbar isLogged={isLogged} setIsLogged={setIsLogged}/>
+            </header>
+            <main className="container container--main">
+                <Routes>
+                    <Route path='/' element={<HomePage setBgClass={setBgClass}/>}/>
+                    <Route path="/weather" element={<WeatherPage setBgClass={setBgClass} isLogged={isLogged}/>}/>
+                    <Route path="/favorites" element={<Favorites setBgClass={setBgClass} isLogged={isLogged}/>}/>
+                    <Route path="/about" element={<About setBgClass={setBgClass}/>}/>
+                    <Route path="/login" element={<Login setBgClass={setBgClass} setIsLogged={setIsLogged}/>}/>
+                    <Route path="/register" element={<Register setIsLogged={setIsLogged}/>}/>
+                    <Route path="/forgot-password" element={<ForgotPassword/>}/>
+                </Routes>
+            </main>
+            <Footer/>
+        </div>
     );
 }
 

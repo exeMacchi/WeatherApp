@@ -1,7 +1,6 @@
 .search__container {
     display: flex;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .search__bar {
@@ -10,6 +9,10 @@
     font-size: 1.8rem;
     color: #222;
 }
+
+    .search__bar .css-1u9des2-indicatorSeparator {
+        width: 0px;
+    }
 
 .search__button {
     background-color: transparent;
@@ -23,3 +26,10 @@
     .search__button:hover {
         background-color: #999999b4;
     }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .search__container {
+        margin: var(--spacing-16);
+    }
+}

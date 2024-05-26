@@ -1,8 +1,21 @@
 :root{
     /* Colors */
-    --bg: #f7f7f7;
+    --bg: #f8f7fa;
     --bg-card: #FFF;
-    --bg-gr: linear-gradient(137deg, rgba(147,189,255,1) 37%, rgba(193,232,250,1) 100%);
+
+    --color-secondary: #6d58d4;
+    --color-primary: #20bdff;
+
+    /* Degradados */
+    --dg-ultralightblue: linear-gradient(to bottom, #e0eafc, #c7edff);
+    --dg-lightblue: linear-gradient(137deg, rgba(147,189,255,1) 37%, rgba(193,232,250,1) 100%);
+    --dg-darkblue: linear-gradient(-137deg, #2980b9, #2c3e50);
+    --dg-deepblue: linear-gradient(-137deg, #0f0c29, #302b63);
+    --dg-gray: linear-gradient(-45deg, #bdc3c7, #2c3e50);
+    --dg-lightgray: linear-gradient(-45deg, #8e9eab, #eef2f3);
+    --dg-purple: linear-gradient(45deg, #457fca, #5691c8);
+    --dg-default: linear-gradient(30deg,#f7797d, #fbd786, #c6ffdd);
+    --dg-primary: linear-gradient(to right, #5433ff, #313c41);
 
     --text-black-hard: #2c2f35;
     --text-black-solid: #474e59;
@@ -23,6 +36,7 @@
     --spacing-40: 40px;
     --spacing-32: 32px;
     --spacing-24: 24px;
+    --spacing-20: 20px;
     --spacing-16: 16px;
     --spacing-12: 12px;
     --spacing-8: 8px;
@@ -41,9 +55,11 @@
     /* Varios */
     --br-primary: 12px;
     --br-secondary: 8px;
-    
-    --bs-primary: 0 1px 4px 0 rgba(0,0,0,.05),0 4px 40px 0 rgba(0,0,0,.06);
 
+    --bs-primary: 0 1px 4px 0 rgba(0,0,0,.05),0 4px 40px 0 rgba(0,0,0,.06);
+    --bs-secondary: 0 .25rem 1.125rem rgba(75,70,92,.3);
+
+    --border-card: 1px solid hsla(0,0%,51.4%,.16);
     /* Transiciones */
     --tr-03: 0.3s ease-in-out;
 }

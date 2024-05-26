@@ -1,8 +1,8 @@
 const CurrentDetail = ({icon, info}) => {
     return (
-        <div className="extra-info__container">
-            <span className="material-symbols-outlined extra-info__icon">{icon}</span>
-            <span className="extra-info__info">{info}</span>
+        <div className="current-detail__item">
+            <span className="current-detail__icon material-symbols-outlined">{icon}</span>
+            <span className="current-detail__info">{info}</span>
         </div>
     );
 }

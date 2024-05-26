@@ -1,0 +1,62 @@
+.card--login {
+    max-width: 600px;
+    margin: var(--spacing-24);
+    display: grid;
+    place-items: center;
+}
+
+    .card--login > .card__header {
+        align-items: center;
+    }
+
+.btn--login {
+    width: 100%;
+    margin: 0px;
+}
+
+.singup__text {
+    font-size: 1.5rem;
+}
+
+.card__body {
+    width: 100%;
+}
+
+.card__body form {
+    margin-top: var(--spacing-32);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+
+.links__container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+}
+
+/* MobileResponsive */
+@media screen and (max-width: 768px) {
+    .card--login .card__title{
+        font-size: 2.5rem;
+    }
+
+    .card--login .card__subtitle{
+        font-size: 1.5rem;
+    }
+
+    .links__container {
+        padding: var(--spacing-24) 0;
+        align-items: center;
+    }
+
+    .singup__text {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    form .inputs__container:last-child{
+        margin-top: 0;
+    }
+}
