@@ -1,7 +1,6 @@
+import { useEffect } from "react";
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
 import "./About.css"
-import { useEffect } from "react";
-
 
 const About = ({setBgClass}) => {
     useEffect(() => {

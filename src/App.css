@@ -23,9 +23,7 @@
     align-items: center ;
 }
 
-
 /* Clases globales */
-
 .text-dg-primary {
     width: fit-content;
     background-image: var(--dg-primary);

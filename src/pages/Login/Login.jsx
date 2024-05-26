@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { auth } from "../../services/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Swal from "sweetalert2";
-
 import "./Login.css";
 
 const Login = ({ setBgClass, setIsLogged }) => {
@@ -13,7 +12,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
 
     useEffect(() => {
         setBgClass("default");
-    }, [])
+    }, []);
 
     const alertError = () => {
         Swal.fire({
@@ -32,32 +31,36 @@ const Login = ({ setBgClass, setIsLogged }) => {
                     animate__animated
                     animate__fadeInUp
                     animate__faster
-            `},
+            `,
+            },
             hideClass: {
                 popup: `
                     animate__animated
                     animate__fadeOutDown
-                    animate__faster`},
+                    animate__faster`,
+            },
         });
-    }
+    };
 
     const handleOnSubmit = async (e) => {
         try {
             e.preventDefault();
-            const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+            const userCredentials = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
             if (userCredentials) {
-                setIsLogged({logged: true, uid: userCredentials.user.uid});
-                navigate(`/favorites`)
+                setIsLogged({ logged: true, uid: userCredentials.user.uid });
+                navigate(`/favorites`);
             }
-        }
-        catch (error) {
+        } catch (error) {
             console.error(error);
-            alertError(error.message)
-            
+            alertError(error.message);
         }
-    }
+    };
 
-    return(
+    return (
         <div className="sub-container">
             <section className="card card--login">
                 <section className="card__header">
@@ -65,7 +68,7 @@ const Login = ({ setBgClass, setIsLogged }) => {
                         Ingresar a su cuenta
                     </h2>
                     <p className="card__subtitle">
-                        Ingrese a su cuenta de WeatherAPP para acceder a sus 
+                        Ingrese a su cuenta de WeatherAPP para acceder a sus
                         favoritos.
                     </p>
                 </section>
@@ -73,53 +76,59 @@ const Login = ({ setBgClass, setIsLogged }) => {
                 <section className="card__body">
                     <form onSubmit={handleOnSubmit} className="">
                         <div className="inputs__container">
-                            <label htmlFor="label"
-                                className="label">
+                            <label htmlFor="label" className="label">
                                 Correo electrónico
                             </label>
-                            <input id="login-email"
+                            <input
+                                id="login-email"
                                 name="user-email"
                                 className="input input--text"
                                 type="email"
                                 value={email}
                                 placeholder="usuario@mail.com"
-                                onChange={e => setEmail(e.target.value)}/>
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
 
                         <div className="inputs__container">
-                            <label htmlFor="login-pass"
-                                className="label">
+                            <label htmlFor="login-pass" className="label">
                                 Contraseña:
                             </label>
-                            <input id="login-pass"
+                            <input
+                                id="login-pass"
                                 name="user-pass"
                                 className="input input--text"
                                 type="password"
                                 placeholder="••••••••"
                                 value={password}
-                                onChange={e => setPassword(e.target.value)}/>
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
                         </div>
                         <div className="links__container">
+                            <p className="singup__text">
+                                ¿No tienes una cuenta?{" "}
+                                <Link to="/register" className="link">
+                                    Regístrate
+                                </Link>
+                            </p>
 
-
-                                <p className="singup__text">
-                                    ¿No tienes una cuenta? <Link to="/register" className="link">Regístrate</Link>
-                                </p>
-
-                                <p className="singup__text">
-                                    <Link to="/forgot-password" className="link">¿No recuerdas tu contraseña?</Link>
-                                </p>
-                            
+                            <p className="singup__text">
+                                <Link to="/forgot-password" className="link">
+                                    ¿No recuerdas tu contraseña?
+                                </Link>
+                            </p>
                         </div>
 
                         <div className="inputs__container">
-                            <button type="submit" className="btn btn--login">Ingresar</button>
+                            <button type="submit" className="btn btn--login">
+                                Ingresar
+                            </button>
                         </div>
                     </form>
                 </section>
             </section>
         </div>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

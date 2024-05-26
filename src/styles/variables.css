@@ -16,7 +16,6 @@
     --dg-purple: linear-gradient(45deg, #457fca, #5691c8);
     --dg-default: linear-gradient(30deg,#f7797d, #fbd786, #c6ffdd);
     --dg-primary: linear-gradient(to right, #5433ff, #313c41);
-    /* --dg-primary: linear-gradient(54deg,#b94cdb,#fe815e); */
 
     --text-black-hard: #2c2f35;
     --text-black-solid: #474e59;
@@ -56,7 +55,7 @@
     /* Varios */
     --br-primary: 12px;
     --br-secondary: 8px;
-    
+
     --bs-primary: 0 1px 4px 0 rgba(0,0,0,.05),0 4px 40px 0 rgba(0,0,0,.06);
     --bs-secondary: 0 .25rem 1.125rem rgba(75,70,92,.3);
 

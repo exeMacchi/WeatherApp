@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router-dom"
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import Swal from "sweetalert2";
 import { auth } from "../../services/firebase"
 import { initializeFavoritesByUser } from "../../utils/firestore"
-import { useNavigate } from "react-router-dom"
-import Swal from "sweetalert2";
 
 const Register = ({setIsLogged}) => {
     const navigate = useNavigate()

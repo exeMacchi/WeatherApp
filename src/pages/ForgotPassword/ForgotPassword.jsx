@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { passwordReset } from "../../utils/auth"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { passwordReset } from "../../utils/auth"
 
 const ForgotPassword = () => {
     const navigate = useNavigate()
