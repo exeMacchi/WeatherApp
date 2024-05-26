@@ -33,7 +33,6 @@
     color: gray;
 }
 
-
 /* MobileResponsive */
 @media screen and (max-width: 768px) {
     .forecast-card__container{
@@ -66,11 +65,10 @@
         font-weight: var(--semibold);
         font-size: 1.5rem;
     }
-    
+
     .forecast-card__min {
         font-size: 1.2rem;
         color: gray;
     }
 
-        
 }

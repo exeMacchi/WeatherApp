@@ -24,9 +24,13 @@ Para consultar los datos del clima utilizamos GeoDB Cities y WeatherApi.
 
 ## Librerías
 
+- React-awesome-reveal
 - React-router-dom.
+- React-select-async-paginate
+- SweetAlert2.
 - Slick-carousel.
-- SweetAlert2 entre otras depencias NPM.
+- Iconify
+- Firebase
 
 ## Equipo
 

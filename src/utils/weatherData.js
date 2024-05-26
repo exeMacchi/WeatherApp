@@ -50,7 +50,6 @@ const organizeDailyForecast = (forecast, localHour) => {
     const dailyForecast = [];
     const MAX_HOURS = 12;
     let repeat = 0;
-    
 
     for (let hour = currentTime + 1; hour < 24 && repeat < MAX_HOURS; hour++, repeat++) {
         let hourForecast = {
@@ -71,9 +70,6 @@ const organizeDailyForecast = (forecast, localHour) => {
         }
         dailyForecast.push(hourForecast);
     }
-    console.groupCollapsed("dailyForecast")
-        console.log(dailyForecast);
-    console.groupEnd();
     return dailyForecast;
 }
 
@@ -99,9 +95,9 @@ const organizeWeekForecast = (forecast) => {
     return weekForecast;
 }
 
-export { 
-    organizeCurrentForecast, 
+export {
+    organizeCurrentForecast,
     organizeCurrentDetails,
-    organizeDailyForecast, 
+    organizeDailyForecast,
     organizeWeekForecast
 };

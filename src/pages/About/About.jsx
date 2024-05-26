@@ -1,7 +1,6 @@
+import { useEffect } from "react";
 import { Icon } from "@iconify-icon/react/dist/iconify.js"
 import "./About.css"
-import { useEffect } from "react";
-
 
 const About = ({setBgClass}) => {
     useEffect(() => {
@@ -76,7 +75,7 @@ const About = ({setBgClass}) => {
                         <ul className="article__ul">
                             <li className="article__li">
                                 <span className="dot">• </span>
-                                React-awesome-reveal
+                                React-awesome-reveal.
                             </li>
                             <li className="article__li">
                                 <span className="dot">• </span>
@@ -84,7 +83,7 @@ const About = ({setBgClass}) => {
                             </li>
                             <li className="article__li">
                                 <span className="dot">• </span>
-                                React-select-async-paginate
+                                React-select-async-paginate.
                             </li>
                             <li className="article__li">
                                 <span className="dot">• </span>
@@ -93,6 +92,14 @@ const About = ({setBgClass}) => {
                             <li className="article__li">
                                 <span className="dot">• </span>
                                 Slick-carousel.
+                            </li>
+                            <li className="article__li">
+                                <span className="dot">• </span>
+                                Iconify.
+                            </li>
+                            <li className="article__li">
+                                <span className="dot">• </span>
+                                Firebase.
                             </li>
                         </ul>
                     </article>

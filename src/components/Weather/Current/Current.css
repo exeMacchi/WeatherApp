@@ -46,7 +46,6 @@
     gap: var(--spacing-8);
     font-size: 1.7rem;
     font-weight: var(--regular);
-    
     text-wrap: wrap;
 }
 
@@ -54,8 +53,6 @@
     max-width: 140px;
     filter: drop-shadow(0px 0px 12px rgba(0,0,0,0.15));
 }
-
-/* .current__icon-container span {} */
 
 .current__icon--forecast{
     max-width: 50px;

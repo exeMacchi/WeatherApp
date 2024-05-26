@@ -5,9 +5,7 @@ import "./Detail.css";
 const Detail = ({ detail, isLogged }) => {
     return (
         <section className="card">
-            {
-                !isLogged
-                ?
+            {!isLogged ? (
                 <div className="forecast__overlay">
                     <p className="forecast__overlay-text">
                         Información disponible solo para usuarios registrados
@@ -16,17 +14,23 @@ const Detail = ({ detail, isLogged }) => {
                         Iniciar sesión
                     </Link>
                 </div>
-                :
+            ) : (
                 <></>
-            }
+            )}
 
-            <section className={`card__header ${!isLogged ? "forecast__blur" : ""}`}>
+            <section
+                className={`card__header ${!isLogged ? "forecast__blur" : ""}`}
+            >
                 <h2 className="card__title text-dg-primary">
                     Detalle del pronóstico
                 </h2>
             </section>
 
-            <section className={`card__body detail-container ${!isLogged ? "forecast__blur" : ""}`}>
+            <section
+                className={`card__body detail-container ${
+                    !isLogged ? "forecast__blur" : ""
+                }`}
+            >
                 <article className="detail__item">
                     <div className="detail__icon-container">
                         <Icon icon="tabler:temperature" />

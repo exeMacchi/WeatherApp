@@ -22,6 +22,7 @@
 .article:last-child {
     margin-bottom: 0;
 }
+
 .article__title {
     margin-bottom: var(--spacing-8);
 }
