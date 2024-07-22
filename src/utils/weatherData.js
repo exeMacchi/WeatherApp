@@ -83,7 +83,7 @@ const organizeWeekForecast = (forecast) => {
     const weekForecast = [];
 
     // i es 1 porque es el día posterior al día actual (0)
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i < forecast.length; i++) {
         let dayForecast = {
             day: formatDayOfWeek(forecast[i].date),
             icon: getWeatherIcon(forecast[i].day.condition.code, 12),

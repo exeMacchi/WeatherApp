@@ -45,9 +45,7 @@ const Weather = ({ isLoading, show, weatherData, isLogged, favorite }) => {
         );
 
         // Se actualiza el Forecast week
-        const weekForecast = organizeWeekForecast(
-            weatherData.forecast.forecastday
-        );
+        const weekForecast = organizeWeekForecast(weatherData.forecast.forecastday);
 
         // Handler para agregar un favorito
         const handleAddFavorite = async () => {
